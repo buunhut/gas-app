@@ -83,7 +83,16 @@ const SliderSanPham = ({ giaoDich, khachHangSelected, donHangSelected }) => {
         return (
           <div className="sanPhamWrap" key={index}>
             <div className="sanPhamItem">
-              <img src={`${LINK_IMAGE}/${image}`} alt="" />
+              {image ? (
+                <img
+                  className="img"
+                  src={`${LINK_IMAGE}/${image}`}
+                  alt="hình"
+                />
+              ) : (
+                <div class="img"></div>
+              )}
+
               <div className="flex aic jcsbw plr10">
                 <h4 className="name">{tenSanPham}</h4>
                 <div className="giaXuat">
