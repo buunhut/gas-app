@@ -23,7 +23,7 @@
 
         .headerContent {
             height: 100vh;
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             bottom: 0;
@@ -115,7 +115,7 @@
                 font-weight: bold;
                 transition: all .3s;
                 position: absolute;
-                bottom: 0;
+                bottom: 80px;
 
                 &:hover {
                     background-color: red;
