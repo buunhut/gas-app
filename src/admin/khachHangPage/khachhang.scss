@@ -1,0 +1,21 @@
+.khachHang {
+    padding: 10px;
+
+    .khachHangItem {
+        padding: 10px;
+        background-color: white;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+        .inputItem {
+            border: none;
+            height: 34px;
+
+            input {
+                &:focus {
+                    border: 1px solid silver !important;
+                }
+            }
+
+        }
+    }
+}

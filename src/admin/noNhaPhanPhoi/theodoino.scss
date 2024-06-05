@@ -1,0 +1,233 @@
+@media screen and (max-width: 576px) {
+
+    .theoDoiNo {
+        h3.title {
+            margin: 10px auto;
+            text-align: center;
+        }
+
+        .info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: white;
+            border-radius: 10px;
+
+            p {
+                color: silver;
+                font-size: 14px;
+                font-weight: 500;
+                text-align: center;
+
+                &.right {
+                    text-align: right;
+                }
+
+                i {
+                    font-size: 22px;
+                    margin-bottom: 10px;
+                }
+
+            }
+
+            h3 {
+                color: #009900;
+                text-align: center;
+                font-size: 18px;
+
+
+                span {
+                    font-size: 18px;
+                }
+
+            }
+
+
+
+        }
+
+        .content {
+            padding: 10px;
+            background-color: white;
+
+            .noItemWrap {
+                width: 394px;
+                overflow: hidden;
+                border: 1px solid silver;
+                border-radius: 8px;
+                margin-bottom: 15px;
+                padding: 10px;
+                font-size: 16px;
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+                // &:nth-child(even) {
+                //     background-color: rgb(250, 250, 250);
+                // }
+
+                &:hover {
+                    border-color: #009900;
+                }
+
+
+                .noItem {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+
+                    .noItemContent {
+                        h4 {
+                            color: #009900;
+                            width: 192px;
+                        }
+
+                        // background-color: red;
+                        p.right {
+                            text-align: right;
+                            width: 120px;
+                            padding-right: 3px;
+                        }
+
+
+                        p.vo {
+                            width: 60px;
+                            text-align: right;
+
+
+                        }
+
+                        p.title {
+                            // color: silver;
+                            font-size: 14px;
+                            font-weight: 500;
+                        }
+
+
+
+                    }
+                }
+
+                .donHangDetail {
+                    transition: all .5s;
+                    overflow: hidden;
+                    margin-top: 10px;
+                    padding: 10px;
+                    border: 1px solid silver;
+                    border-radius: 5px 5px 0 0;
+
+
+                    .dettail {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        margin-bottom: 10px;
+
+                        .price {
+                            color: silver;
+                            display: flex;
+                            gap: 20px;
+                            margin-top: 5px;
+
+                        }
+
+                        p.right {
+                            text-align: right;
+                            padding-right: 3px;
+                        }
+                    }
+
+
+                    .traDetailWrap {
+                        overflow: hidden;
+
+                        .traDetail {
+                            border-top: 1px solid silver;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+
+                            input.right {
+                                text-align: right;
+                                width: 120px;
+                            }
+
+
+
+
+
+                            .traDetailItem {
+                                transform: translateX(-25px);
+                                display: flex;
+                                align-items: center;
+                                // justify-content: space-between;
+                                // gap: 20px;
+
+                                width: 100%;
+                                height: 40px;
+                                transition: all .5s;
+
+                                &:hover {
+                                    transform: translateX(0);
+
+                                }
+
+
+
+
+                                i {
+                                    margin: 0 10px;
+                                    color: silver;
+                                    cursor: pointer;
+                                    font-size: 14px;
+
+                                    &:hover {
+                                        color: red;
+                                    }
+                                }
+
+                            }
+
+                            p {
+                                width: 50%;
+                                font-size: 16px;
+
+                                &.right {
+                                    text-align: right;
+                                }
+
+                            }
+
+                        }
+                    }
+                }
+
+
+            }
+        }
+
+        .noDataItem {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            margin-top: 10px;
+
+            h1 {
+                color: #c0c0c0;
+                text-align: center;
+
+                i {
+                    color: orangered;
+                    margin-left: 8px;
+                }
+            }
+
+
+
+        }
+    }
+}

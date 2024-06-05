@@ -1,0 +1,140 @@
+@media screen and (max-width: 500px) {
+
+
+    .header {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        background-color: orangered;
+        padding: 0 20px;
+
+        .icon {
+            width: 30px;
+            height: 30px;
+            // background-color: orangered;
+            text-align: center;
+            line-height: 30px;
+
+            i {
+                color: white;
+            }
+
+        }
+
+        .headerContent {
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 1000;
+            transform: translateX(-100%);
+            width: 300px;
+            transition: all .3s;
+            background-color: white;
+            padding: 0px 0 20px;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+            background-color: whitesmoke;
+
+            i.close {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                cursor: pointer;
+                color: orangered;
+                transition: all .3s;
+
+                &:hover {
+                    color: red;
+
+                }
+            }
+
+            .user {
+                height: 80px;
+                display: flex;
+                padding: 20px;
+                // background-color: #3c22ff;
+                // color: white;
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+                gap: 10px;
+
+
+                h4 {
+
+                    text-align: center;
+                    color: orangered;
+                    font-size: 22px;
+
+                }
+
+                i {
+                    color: #009900;
+                    font-size: 22px;
+                }
+            }
+
+
+
+            ul {
+                li {
+                    list-style: none;
+                    padding: 10px 20px;
+                    transition: all .3s;
+                    font-weight: 500;
+                    font-size: 16px;
+                    color: #009900;
+                    cursor: pointer;
+                    border-bottom: 1px solid #cccccc;
+
+                    &:last-child {
+                        border-bottom: none;
+
+                    }
+
+
+
+                    &:hover {
+                        background-color: orangered;
+                        color: white;
+                        font-weight: 600;
+                    }
+                }
+            }
+
+            button {
+                height: 30px;
+                width: 100%;
+                margin: 20px auto;
+                border: none;
+                background-color: orangered;
+                color: white;
+                font-size: 16px;
+                font-weight: bold;
+                transition: all .3s;
+                position: absolute;
+                bottom: 0;
+
+                &:hover {
+                    background-color: red;
+
+                }
+
+
+            }
+        }
+
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 999;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+}

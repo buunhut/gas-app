@@ -1,0 +1,266 @@
+@media screen and (max-width: 576px) {
+
+    .sanPham {
+        .mainContent {
+            margin-top: 5px;
+            background-color: red;
+        }
+
+        .controller {
+            height: 38px;
+            padding: 0 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: white;
+
+
+        }
+
+        .category {
+            // height: 100px;
+            background-color: white;
+            padding: 10px 0;
+
+            .categorySlider {
+                display: flex;
+                align-items: center;
+                overflow-x: scroll;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+                .categoryWrap {
+                    margin-right: 10px;
+
+
+                    cursor: pointer;
+                    position: relative;
+
+
+                    &:first-child {
+                        margin-left: 10px;
+
+                    }
+
+                    &:hover {
+                        i.delete {
+                            display: block;
+                        }
+                    }
+
+                    .categoryItem {
+                        width: 160px;
+                        // height: 100px;
+                        padding: 5px;
+                        background-color: white;
+                        border: 1px solid #cccccc;
+                        border-radius: 5px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 5px;
+
+
+                        .tonKho {
+
+                            p {
+                                font-weight: bold;
+                                color: white;
+                                background-color: orange;
+                                padding: 5px;
+                                border-radius: 5px;
+                            }
+                        }
+
+
+
+
+
+                    }
+
+                    i.delete {
+                        position: absolute;
+                        bottom: 5px;
+                        right: 5px;
+                        color: #cccccc;
+                        transition: all .3s;
+                        cursor: pointer;
+                        display: none;
+
+                        &:hover {
+                            color: red;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .product {
+            margin-top: 5px;
+
+
+            .controller {
+                height: 38px;
+                padding: 0 10px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: white;
+
+
+
+
+            }
+
+            .productContent {
+                background-color: white;
+                padding: 10px;
+                display: flex;
+                justify-content: flex-start;
+                gap: 10px;
+                flex-wrap: wrap;
+
+
+                .productWrap {
+                    position: relative;
+
+                    &:hover {
+                        i.delete {
+                            display: block;
+                        }
+
+                        .productItem {
+                            border-color: #009900;
+                        }
+                    }
+
+                    .productItem {
+                        width: 192px;
+                        height: 192px;
+                        // border: 1px solid #cccccc;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: flex-end;
+                        padding: 5px;
+                        gap: 5px;
+                        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+                        .img {
+                            position: absolute;
+                            top: 0px;
+                            left: 0;
+                            z-index: 1;
+                            width: 50px;
+                            height: 50px;
+
+                        }
+
+                        .upload {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            z-index: 1;
+                            width: 50px;
+                            height: 50px;
+
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            .custom-file-upload {
+                                display: inline-block;
+                                position: relative;
+                                font-size: 16px;
+
+                                label {
+                                    cursor: pointer;
+                                    border: 1px solid #ccc;
+                                    border-radius: 5px;
+
+                                    &:hover {
+                                        background-color: #cbcbcb;
+                                    }
+                                }
+
+                                input[type="file"] {
+                                    display: none;
+                                }
+
+                                i {
+                                    font-size: 50px;
+                                    color: rgb(225, 225, 225);
+                                    margin: 0 auto;
+                                    cursor: pointer;
+                                }
+                            }
+
+                        }
+
+                        .textContent {
+                            position: absolute;
+                            top: 50px;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            z-index: 10;
+                            background-color: transparent;
+                            // background-color: red;
+                        }
+                    }
+
+                    i.delete {
+                        position: absolute;
+                        bottom: 10px;
+                        right: 5px;
+                        color: #cccccc;
+                        transition: all .3s;
+                        cursor: pointer;
+                        display: none;
+
+                        &:hover {
+                            color: red;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        input {
+            width: 50%;
+            height: 30px;
+            padding: 0 3px;
+            font-size: 16px;
+            text-align: right;
+
+
+            &.tenLoaiVo {
+                text-align: left;
+                font-weight: bold;
+
+
+
+
+            }
+
+            &.giaLoaiVo {
+                text-align: left;
+
+            }
+
+            &.tenSanPham {
+                text-align: left;
+                font-weight: bold;
+                width: 100%;
+
+            }
+        }
+
+    }
+
+}

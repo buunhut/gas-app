@@ -1,0 +1,188 @@
+.baoCao {
+    h3 {
+        // color: orangered;
+        text-align: center;
+
+    }
+
+    h6 {
+        color: rgb(40, 40, 40);
+        font-size: 14px;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    p {
+        font-size: 16px;
+        font-weight: bold;
+        margin: 10px;
+
+    }
+
+    .baoCaoContent {
+        margin-top: 5px;
+        padding: 10px;
+
+        h5.title {
+            display: inline-block;
+            background-color: #009900;
+            color: white;
+            border-radius: 0 15px 15px 0;
+            margin: 20px 0 3px -10px;
+        }
+
+        .baoCaoTienItem {
+            margin-top: 10px;
+            padding: 50px 10px 10px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+
+            h5.title {
+                display: inline-block;
+                background-color: #009900;
+                color: white;
+                border-radius: 0 15px 15px 0;
+                // margin: 20px 0 3px -10px;
+                position: absolute;
+                top: -10px;
+                left: -10px;
+            }
+
+
+            div {
+                color: #009900;
+
+                p {
+                    margin: 0;
+                    color: silver;
+                    font-size: 14px;
+                    font-weight: 500;
+
+
+                }
+
+                span {
+                    // display: block;
+                    // width: 100px;
+                    text-align: right;
+                    // color: #009900;
+                    font-size: 20px;
+                    font-weight: bold;
+
+                }
+            }
+
+
+        }
+
+        .baoCaoContentItem {
+            margin-top: 10px;
+            padding: 50px 10px 10px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: flex-start;
+            position: relative;
+
+            h5.title {
+                display: inline-block;
+                background-color: #009900;
+                color: white;
+                border-radius: 0 15px 15px 0;
+                // margin: 20px 0 3px -10px;
+                position: absolute;
+                top: -10px;
+                left: -10px;
+            }
+
+            .item.vo {
+                width: 86px;
+                padding: 5px;
+                border: 1px solid silver;
+                border-radius: 10px;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-direction: column;
+
+                h4 {
+                    // color: #009900;
+                    font-weight: 500;
+
+                }
+
+                .khoItem {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 5px;
+
+                    p {
+                        margin: 0;
+                        font-weight: 600;
+                        color: orangered;
+                        font-size: 20px;
+                        vertical-align: middle;
+
+
+
+                    }
+
+                    i {
+                        color: silver;
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            .item.sanPham {
+                width: 182px;
+                padding: 10px;
+                border: 1px solid silver;
+                border-radius: 10px;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-direction: column;
+
+                h4 {
+                    // color: #009900;
+                    font-weight: 500;
+
+                }
+
+                .khoItem {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 5px;
+                    margin-top: 5px;
+
+                    p {
+                        margin: 0;
+                        font-weight: 600;
+                        color: orangered;
+                        font-size: 20px;
+                        vertical-align: middle;
+
+
+
+                    }
+
+                    i {
+                        color: silver;
+                        font-size: 14px;
+                    }
+                }
+            }
+
+        }
+    }
+}
