@@ -42,15 +42,22 @@ const HeaderComponent = () => {
           className="headerContent"
           style={{ transform: show ? "translateX(0)" : "" }}
         >
-          <div
-            className="user"
-            onClick={() => {
-              navigate("/admin");
-              handleClickMenu();
-            }}
-          >
-            <i className="fa-solid fa-house"></i>{" "}
-            <h4>{user.shopName?.toUpperCase()}</h4>
+          <div className="user">
+            <i
+              className="fa-solid fa-house"
+              onClick={() => {
+                navigate("/admin");
+                handleClickMenu();
+              }}
+            ></i>{" "}
+            <h4
+              onClick={() => {
+                navigate("/admin");
+                handleClickMenu();
+              }}
+            >
+              {user.shopName?.toUpperCase()}
+            </h4>
           </div>
           <ul>
             <li
