@@ -501,13 +501,15 @@ i.delete {
 @media screen and (max-width:576px) {
     #container {
         display: block;
-
         background-color: whitesmoke;
+        height: 100vh;
+        position: relative;
+        overflow: scroll;
 
         .content {
             width: 414px;
             margin: 0 auto;
-            min-height: calc(100vh - 90px);
+            // min-height: calc(100vh - 90px);
 
             // background-color: silver;
 
@@ -520,7 +522,11 @@ i.delete {
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: black;
+            z-index: 999;
+            background-color: rgba(0, 0, 0, 0.6);
+            height: 100vh;
         }
+
+
     }
 }

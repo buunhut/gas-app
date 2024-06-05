@@ -54,7 +54,6 @@ const AdminPage = () => {
           <Outlet />
         </div>
         <FooterComponent />
-        {isLoading && <div className="overlay"></div>}
       </div>
     );
   } else {
