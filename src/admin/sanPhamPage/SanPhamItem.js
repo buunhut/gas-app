@@ -17,6 +17,7 @@ const SanPhamItem = ({ item, headers }) => {
     giaDoi,
     giaDoiGan,
     giaDoiXa,
+    loaiVoId,
     loaiVo,
     tonKho,
     images,
@@ -37,7 +38,15 @@ const SanPhamItem = ({ item, headers }) => {
     const { className, value } = e.target;
     if (className !== "tenSanPham") {
       setEditSanPham({
-        ...item,
+        sanPhamId,
+        tenSanPham,
+        giaNhap,
+        giaDoi,
+        giaDoiGan,
+        giaDoiXa,
+        loaiVoId,
+        loaiVo,
+        tonKho,
         [className]:
           +value.replaceAll(/[^0-9]/g, "") === null
             ? 0
@@ -45,7 +54,15 @@ const SanPhamItem = ({ item, headers }) => {
       });
     } else {
       setEditSanPham({
-        ...item,
+        sanPhamId,
+        tenSanPham,
+        giaNhap,
+        giaDoi,
+        giaDoiGan,
+        giaDoiXa,
+        loaiVoId,
+        loaiVo,
+        tonKho,
         [className]: value,
       });
     }

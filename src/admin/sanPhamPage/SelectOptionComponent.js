@@ -10,9 +10,25 @@ const SelectOptionComponent = ({ item, listLoaiVo, title, headers }) => {
     setDropDown(!dropDown);
   };
 
+  const {
+    sanPhamId,
+    tenSanPham,
+    giaNhap,
+    giaDoi,
+    giaDoiGan,
+    giaDoiXa,
+    tonKho,
+  } = item;
   const handleSelectLoaiVo = (vo) => {
     const data = {
-      ...item,
+      sanPhamId,
+      tenSanPham,
+      giaNhap,
+      giaDoi,
+      giaDoiGan,
+      giaDoiXa,
+      tonKho,
+
       loaiVoId: vo.loaiVoId,
       loaiVo: vo.loaiVoName,
     };
