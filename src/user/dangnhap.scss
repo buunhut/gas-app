@@ -1,0 +1,57 @@
+.dangNhap {
+    padding: 10px;
+
+    .icon {
+        text-align: center;
+
+        i {
+            font-size: 80px;
+            color: orangered;
+        }
+    }
+
+
+
+
+    h1 {
+        text-align: center;
+        color: orangered;
+    }
+
+    .dangNhapContent {
+        margin: 20px auto;
+        padding: 20px;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+        form {
+            .inputItem {
+                margin-top: 5px;
+
+                input {
+                    height: 32px;
+                    padding: 0 5px;
+                }
+
+            }
+
+            button {
+                margin: 20px auto;
+                height: 34px;
+                width: 100%;
+                text-align: center;
+                color: white;
+                background-color: orangered;
+                border: none;
+                font-size: 18px;
+                font-weight: bold;
+                transition: all .5s;
+                border-radius: 5px;
+
+                &:hover {
+                    background-color: #009900;
+                }
+            }
+        }
+    }
+}

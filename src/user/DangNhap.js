@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { updateUser } from "../redux/dataSlice";
 import { useNavigate } from "react-router-dom";
+import "./dangnhap.scss";
 
 export const API_URL = process.env.REACT_APP_LINK_API;
 
@@ -42,29 +43,37 @@ const DangNhap = () => {
     postDangNhap(data);
   };
   return (
-    <div>
-      <h3>Đăng nhập</h3>
-      <form action="">
-        <div className="inputItem">
-          <input
-            type="text"
-            placeholder="Số điện thoại"
-            id="userPhone"
-            onChange={handleChangeInput}
-          />
-        </div>
-        <div className="inputItem">
-          <input
-            type="password"
-            placeholder="Mật khẩu"
-            id="userPass"
-            onChange={handleChangeInput}
-          />
-        </div>
-        <button type="button" onClick={handleDangNhap}>
-          Đăng nhập
-        </button>
-      </form>
+    <div className="dangNhap">
+      <div className="icon">
+        <i className="fa-solid fa-lock"></i>
+      </div>
+
+      <h1>Đăng nhập</h1>
+      <div className="dangNhapContent">
+        <form action="">
+          <div className="inputItem">
+            <i className="fa-solid fa-phone"></i>
+            <input
+              type="text"
+              placeholder="Số điện thoại"
+              id="userPhone"
+              onChange={handleChangeInput}
+            />
+          </div>
+          <div className="inputItem">
+            <i class="fa-solid fa-key"></i>
+            <input
+              type="password"
+              placeholder="Mật khẩu"
+              id="userPass"
+              onChange={handleChangeInput}
+            />
+          </div>
+          <button type="button" onClick={handleDangNhap}>
+            Đăng nhập
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
