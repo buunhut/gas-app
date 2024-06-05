@@ -2,12 +2,7 @@ import React, { useState } from "react";
 import { putSanPham } from "../../api/putAPI";
 import { useDispatch } from "react-redux";
 
-const SelectOptionComponent = ({
-  item,
-  listLoaiVo,
-  title,
-  headers,
-}) => {
+const SelectOptionComponent = ({ item, listLoaiVo, title, headers }) => {
   const dispatch = useDispatch();
   const [loaiVo, setLoaiVo] = useState(null);
   const [dropDown, setDropDown] = useState(false);
@@ -53,7 +48,7 @@ const SelectOptionComponent = ({
           right: 0,
           backgroundColor: "#f2f2f2",
           transition: "all 0.3s",
-          zIndex: "9999",
+          zIndex: "998",
         }}
       >
         {listLoaiVo?.map((vo, index) => {
