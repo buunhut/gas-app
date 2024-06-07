@@ -90,7 +90,7 @@ const SliderSanPham = ({ giaoDich, khachHangSelected, donHangSelected }) => {
                   alt="hình"
                 />
               ) : (
-                <div class="img"></div>
+                <div className="img"></div>
               )}
 
               <div className="flex aic jcsbw plr10">
