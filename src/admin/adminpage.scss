@@ -498,13 +498,20 @@ i.delete {
 
 
 
+
+
+
+
 @media screen and (max-width:576px) {
+
+
     #container {
         display: block;
         background-color: whitesmoke;
         height: 100vh;
         position: relative;
         overflow: scroll;
+
 
         .content {
             width: 414px;

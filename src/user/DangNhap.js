@@ -61,7 +61,7 @@ const DangNhap = () => {
             />
           </div>
           <div className="inputItem">
-            <i class="fa-solid fa-key"></i>
+            <i className="fa-solid fa-key"></i>
             <input
               type="password"
               placeholder="Mật khẩu"

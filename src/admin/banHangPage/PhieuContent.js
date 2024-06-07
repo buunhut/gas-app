@@ -36,7 +36,7 @@ const PhieuContent = ({ item, toShow, sort }) => {
       });
     }
   };
-  const handleUpdateChiTiet = async (item, sort) => {
+  const handleUpdateChiTiet = async (item) => {
     const { chiTietId } = item;
     if (editDonGiaChiTiet?.[chiTietId]) {
       const confirm = window.confirm(
