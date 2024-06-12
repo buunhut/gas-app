@@ -8,7 +8,7 @@ const DoiTac = ({ listDoiTac, handleSelectDoiTac, indexItem }) => {
         {listDoiTac?.map((doiTac, index) => {
           const { tenDoiTac } = doiTac;
           // const { doiTacId, tenDoiTac, viTri } = doiTac;
-          if (tenDoiTac !== null) {
+          if (tenDoiTac !== null || tenDoiTac !== "") {
             return (
               <DoiTacItem
                 key={index}

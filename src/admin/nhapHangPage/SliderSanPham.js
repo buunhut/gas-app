@@ -63,41 +63,43 @@ const SliderSanPham = ({ giaoDich, donHangSelected }) => {
           loaiVo,
           loaiVoId,
         };
-        return (
-          <div className="sanPhamWrap" key={index}>
-            <div className="sanPhamItem">
-              <img src="" alt="" />
-              <div className="flex aic jcsbw plr10">
-                <h4 className="name">{tenSanPham}</h4>
-                <div className="giaXuat">
-                  <input
-                    type="text"
-                    placeholder="Giá nhập"
-                    onChange={(e) => handleChangeInputGia(e, sanPhamXuat)}
-                    value={
-                      editGia?.sanPhamId === sanPhamId
-                        ? editGia?.giaXuat === 0
-                          ? ""
-                          : editGia?.giaXuat.toLocaleString()
-                        : giaXuat.toLocaleString()
-                    }
-                  />
+        if (tenSanPham !== null || tenSanPham !== "") {
+          return (
+            <div className="sanPhamWrap" key={index}>
+              <div className="sanPhamItem">
+                <img src="" alt="" />
+                <div className="flex aic jcsbw plr10">
+                  <h4 className="name">{tenSanPham}</h4>
+                  <div className="giaXuat">
+                    <input
+                      type="text"
+                      placeholder="Giá nhập"
+                      onChange={(e) => handleChangeInputGia(e, sanPhamXuat)}
+                      value={
+                        editGia?.sanPhamId === sanPhamId
+                          ? editGia?.giaXuat === 0
+                            ? ""
+                            : editGia?.giaXuat.toLocaleString()
+                          : giaXuat.toLocaleString()
+                      }
+                    />
+                  </div>
+                  {donHangSelected && (
+                    <button
+                      className="btn xuatHang"
+                      onClick={() => handleXuatHang(sanPhamXuat)}
+                    >
+                      {giaoDich}
+                    </button>
+                  )}
                 </div>
-                {donHangSelected && (
-                  <button
-                    className="btn xuatHang"
-                    onClick={() => handleXuatHang(sanPhamXuat)}
-                  >
-                    {giaoDich}
-                  </button>
-                )}
-              </div>
-              <div className="tonKho">
-                <p>Kho: {tonKho.toLocaleString()}</p>
+                <div className="tonKho">
+                  <p>Kho: {tonKho.toLocaleString()}</p>
+                </div>
               </div>
             </div>
-          </div>
-        );
+          );
+        }
       })}
     </div>
   );

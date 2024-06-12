@@ -80,50 +80,52 @@ const SliderSanPham = ({ giaoDich, khachHangSelected, donHangSelected }) => {
           loaiVo,
           loaiVoId,
         };
-        return (
-          <div className="sanPhamWrap" key={index}>
-            <div className="sanPhamItem">
-              {image ? (
-                <img
-                  className="img"
-                  src={`${LINK_IMAGE}/${image}`}
-                  alt="hình"
-                />
-              ) : (
-                <div className="img"></div>
-              )}
-
-              <div className="flex aic jcsbw plr10">
-                <h4 className="name">{tenSanPham}</h4>
-                <div className="giaXuat">
-                  <input
-                    type="text"
-                    placeholder="Giá xuất"
-                    onChange={(e) => handleChangeInputGia(e, sanPhamXuat)}
-                    value={
-                      editGia?.sanPhamId === sanPhamId
-                        ? editGia?.giaXuat === 0
-                          ? ""
-                          : editGia?.giaXuat.toLocaleString()
-                        : giaXuat.toLocaleString()
-                    }
+        if (tenSanPham !== null || tenSanPham !== "") {
+          return (
+            <div className="sanPhamWrap" key={index}>
+              <div className="sanPhamItem">
+                {image ? (
+                  <img
+                    className="img"
+                    src={`${LINK_IMAGE}/${image}`}
+                    alt="hình"
                   />
-                </div>
-                {donHangSelected && (
-                  <button
-                    className="btn xuatHang"
-                    onClick={() => handleXuatHang(sanPhamXuat)}
-                  >
-                    {giaoDich}
-                  </button>
+                ) : (
+                  <div className="img"></div>
                 )}
-              </div>
-              <div className="tonKho">
-                <p>Kho: {tonKho.toLocaleString()}</p>
+
+                <div className="flex aic jcsbw plr10">
+                  <h4 className="name">{tenSanPham}</h4>
+                  <div className="giaXuat">
+                    <input
+                      type="text"
+                      placeholder="Giá xuất"
+                      onChange={(e) => handleChangeInputGia(e, sanPhamXuat)}
+                      value={
+                        editGia?.sanPhamId === sanPhamId
+                          ? editGia?.giaXuat === 0
+                            ? ""
+                            : editGia?.giaXuat.toLocaleString()
+                          : giaXuat.toLocaleString()
+                      }
+                    />
+                  </div>
+                  {donHangSelected && (
+                    <button
+                      className="btn xuatHang"
+                      onClick={() => handleXuatHang(sanPhamXuat)}
+                    >
+                      {giaoDich}
+                    </button>
+                  )}
+                </div>
+                <div className="tonKho">
+                  <p>Kho: {tonKho.toLocaleString()}</p>
+                </div>
               </div>
             </div>
-          </div>
-        );
+          );
+        }
       })}
     </div>
   );

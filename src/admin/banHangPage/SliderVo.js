@@ -48,44 +48,46 @@ const SliderVo = ({ donHangSelected, giaoDich }) => {
           loaiVo: loaiVoName,
           loaiVoId,
         };
-        return (
-          <div className="sanPhamWrap" key={index}>
-            <div className="sanPhamItem">
-              <img src="" alt="" />
-              <div className="flex aic jcsbw plr10">
-                <h4 className="name">{loaiVoName}</h4>
-                <div className="giaXuat">
-                  <input
-                    type="text"
-                    placeholder="Giá xuất"
-                    // onClick={() => handleEditGia(sanPhamXuat)}
-                    onChange={(e) => handleChangeInputGia(e, sanPhamXuat)}
-                    value={
-                      editGia?.loaiVoId === loaiVoId
-                        ? editGia.giaXuat === null || editGia.giaXuat === 0
+        if (loaiVoName !== null || loaiVoName !== "") {
+          return (
+            <div className="sanPhamWrap" key={index}>
+              <div className="sanPhamItem">
+                <img src="" alt="" />
+                <div className="flex aic jcsbw plr10">
+                  <h4 className="name">{loaiVoName}</h4>
+                  <div className="giaXuat">
+                    <input
+                      type="text"
+                      placeholder="Giá xuất"
+                      // onClick={() => handleEditGia(sanPhamXuat)}
+                      onChange={(e) => handleChangeInputGia(e, sanPhamXuat)}
+                      value={
+                        editGia?.loaiVoId === loaiVoId
+                          ? editGia.giaXuat === null || editGia.giaXuat === 0
+                            ? ""
+                            : editGia.giaXuat.toLocaleString()
+                          : giaXuat === null || giaXuat === 0
                           ? ""
-                          : editGia.giaXuat.toLocaleString()
-                        : giaXuat === null || giaXuat === 0
-                        ? ""
-                        : giaXuat.toLocaleString()
-                    }
-                  />
+                          : giaXuat.toLocaleString()
+                      }
+                    />
+                  </div>
+                  {donHangSelected && (
+                    <button
+                      className="btn xuatHang"
+                      onClick={() => handleXuatHang(sanPhamXuat)}
+                    >
+                      {giaoDich}
+                    </button>
+                  )}
                 </div>
-                {donHangSelected && (
-                  <button
-                    className="btn xuatHang"
-                    onClick={() => handleXuatHang(sanPhamXuat)}
-                  >
-                    {giaoDich}
-                  </button>
-                )}
-              </div>
-              <div className="tonKho">
-                <p>Kho: {tonKho.toLocaleString()}</p>
+                <div className="tonKho">
+                  <p>Kho: {tonKho.toLocaleString()}</p>
+                </div>
               </div>
             </div>
-          </div>
-        );
+          );
+        }
       })}
     </div>
   );

@@ -7,7 +7,7 @@ const DoiTac = ({ listDoiTac, handleSelectDoiTac, indexItem }) => {
       <div className="slider">
         {listDoiTac?.map((doiTac, index) => {
           const { tenDoiTac } = doiTac;
-          if (tenDoiTac !== null) {
+          if (tenDoiTac !== null || tenDoiTac !== "") {
             return (
               <DoiTacItem
                 key={index}
