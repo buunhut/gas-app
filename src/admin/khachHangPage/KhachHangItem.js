@@ -31,7 +31,9 @@ const KhachHangItem = ({ item }) => {
     const { doiTacId } = item;
     const data = { doiTacId };
     const confirm = window.confirm(
-      `Bạn có chắc muốn xoá ${item.tenDoiTac.toUpperCase()} ?`
+      `Bạn có chắc muốn xoá ${
+        item.tenDoiTac === null ? "" : item.tenDoiTac?.toUpperCase()
+      } ?`
     );
     if (confirm) {
       deleteKhachHang(data, headers, dispatch);
