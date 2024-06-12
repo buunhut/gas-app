@@ -43,7 +43,9 @@ const LoaiVo = () => {
 
   const handleDeleteLoaiVo = (item) => {
     const confirm = window.confirm(
-      `Bạn có chắc muốn xoá ${item.loaiVoName.toUpperCase()}`
+      `Bạn có chắc muốn xoá ${
+        item.loaiVoName === null ? "" : item.loaiVoName?.toUpperCase()
+      }`
     );
     if (confirm) {
       deleteLoaiVo(item, headers, dispatch);
