@@ -87,7 +87,7 @@ const LoaiVo = () => {
                   <div>
                     <input
                       type="text"
-                      className="tenLoaiVo"
+                      className="tenLoaiVo borderBottom"
                       name="loaiVoName"
                       placeholder="Tên loại vỏ"
                       value={
@@ -106,7 +106,7 @@ const LoaiVo = () => {
                   </div>
                   <div>
                     <input
-                      className="giaLoaiVo"
+                      className="giaLoaiVo borderBottom"
                       type="text"
                       name="giaVo"
                       placeholder="Giá vỏ"

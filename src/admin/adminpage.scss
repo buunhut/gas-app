@@ -244,8 +244,11 @@ button.btnf {
         background-color: transparent;
         border: none;
 
-
+        &.borderBottom {
+            border-bottom: 1px solid silver;
+        }
     }
+
 }
 
 input {

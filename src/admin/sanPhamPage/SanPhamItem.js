@@ -141,7 +141,7 @@ const SanPhamItem = ({ item, headers }) => {
             <input
               type="text"
               placeholder="Tên sản phẩm"
-              className="tenSanPham"
+              className="tenSanPham borderBottom"
               value={
                 editSanPham?.sanPhamId !== undefined &&
                 editSanPham?.sanPhamId === sanPhamId
@@ -156,11 +156,11 @@ const SanPhamItem = ({ item, headers }) => {
               onBlur={handleUpdateProduct}
             />
           </div>
-          <div className="flex mt5">
+          <div className="flex mt5 g5">
             <input
               type="text"
               placeholder="Giá nhập"
-              className="giaNhap"
+              className="giaNhap borderBottom"
               value={
                 editSanPham?.sanPhamId !== undefined &&
                 editSanPham?.sanPhamId === sanPhamId
@@ -177,7 +177,7 @@ const SanPhamItem = ({ item, headers }) => {
             <input
               type="text"
               placeholder="Giá đổi"
-              className="giaDoi"
+              className="giaDoi borderBottom"
               value={
                 editSanPham?.sanPhamId !== undefined &&
                 editSanPham?.sanPhamId === sanPhamId
@@ -192,11 +192,11 @@ const SanPhamItem = ({ item, headers }) => {
               onBlur={handleUpdateProduct}
             />
           </div>
-          <div className="flex mt5">
+          <div className="flex mt5 g5">
             <input
               type="text"
               placeholder="Giá đổi gần"
-              className="giaDoiGan"
+              className="giaDoiGan borderBottom"
               value={
                 editSanPham?.sanPhamId !== undefined &&
                 editSanPham?.sanPhamId === sanPhamId
@@ -214,7 +214,7 @@ const SanPhamItem = ({ item, headers }) => {
             <input
               type="text"
               placeholder="Giá đổi xa"
-              className="giaDoiXa"
+              className="giaDoiXa borderBottom"
               value={
                 editSanPham?.sanPhamId !== undefined &&
                 editSanPham?.sanPhamId === sanPhamId

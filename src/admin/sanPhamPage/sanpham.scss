@@ -231,6 +231,11 @@
             font-size: 16px;
             text-align: right;
 
+            &.borderBottom {
+                border-bottom: 1px solid silver;
+            }
+
+
 
             &.tenLoaiVo {
                 text-align: left;

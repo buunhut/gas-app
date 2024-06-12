@@ -52,7 +52,7 @@ const KhachHangItem = ({ item }) => {
           <input
             type="text"
             placeholder="Tên khách hàng"
-            className="tenDoiTac"
+            className="tenDoiTac borderBottom"
             value={
               doiTacSelected?.doiTacId === doiTacId
                 ? doiTacSelected?.tenDoiTac === null
@@ -71,7 +71,7 @@ const KhachHangItem = ({ item }) => {
           <input
             type="text"
             placeholder="Điện thoại"
-            className="soDienThoaiDoiTac"
+            className="soDienThoaiDoiTac borderBottom"
             value={
               doiTacSelected?.doiTacId === doiTacId
                 ? doiTacSelected?.soDienThoaiDoiTac === null
@@ -91,7 +91,7 @@ const KhachHangItem = ({ item }) => {
           <input
             type="text"
             placeholder="Địa chỉ"
-            className="diaChiDoiTac"
+            className="diaChiDoiTac borderBottom"
             value={
               doiTacSelected?.doiTacId === doiTacId
                 ? doiTacSelected?.diaChiDoiTac === null
@@ -112,7 +112,7 @@ const KhachHangItem = ({ item }) => {
             <input
               type="text"
               placeholder="Vị trí"
-              className="viTri"
+              className="viTri borderBottom"
               value={
                 doiTacSelected?.doiTacId === doiTacId
                   ? doiTacSelected?.viTri === null
