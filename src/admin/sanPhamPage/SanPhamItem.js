@@ -76,7 +76,9 @@ const SanPhamItem = ({ item, headers }) => {
     const { sanPhamId } = item;
     const data = { sanPhamId };
     const confirm = window.confirm(
-      `Bạn có chắc muốn xoá ${item.tenSanPham.toUpperCase()}`
+      `Bạn có chắc muốn xoá ${
+        item.tenSanPham === null ? "" : item.tenSanPham?.toUpperCase()
+      }`
     );
     if (confirm) {
       deleteSanPham(data, headers);
