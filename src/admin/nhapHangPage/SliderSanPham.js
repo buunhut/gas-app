@@ -72,7 +72,7 @@ const SliderSanPham = ({ giaoDich, donHangSelected }) => {
           loaiVo,
           loaiVoId,
         };
-        if (tenSanPham !== null || tenSanPham !== "") {
+        if (tenSanPham !== null && tenSanPham !== "") {
           return (
             <div className="sanPhamWrap" key={index}>
               <div className="sanPhamItem">
