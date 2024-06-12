@@ -6,16 +6,19 @@ const DoiTac = ({ listDoiTac, handleSelectDoiTac, indexItem }) => {
     <div className="khachHangContent mb10">
       <div className="slider">
         {listDoiTac?.map((doiTac, index) => {
+          const { tenDoiTac } = doiTac;
           // const { doiTacId, tenDoiTac, viTri } = doiTac;
-          return (
-            <DoiTacItem
-              key={index}
-              doiTac={doiTac}
-              handleSelectDoiTac={() => handleSelectDoiTac(index, doiTac)}
-              indexItem={indexItem}
-              index={index}
-            />
-          );
+          if (tenDoiTac !== null) {
+            return (
+              <DoiTacItem
+                key={index}
+                doiTac={doiTac}
+                handleSelectDoiTac={() => handleSelectDoiTac(index, doiTac)}
+                indexItem={indexItem}
+                index={index}
+              />
+            );
+          }
         })}
       </div>
     </div>
