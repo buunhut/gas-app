@@ -48,7 +48,15 @@ const SliderSanPham = ({ giaoDich, donHangSelected }) => {
           loaiVo,
           loaiVoId,
           tonKho,
+          images,
         } = item;
+        let image = null;
+
+        const imageName = images?.imageName || null;
+
+        if (imageName !== null) {
+          image = imageName[0];
+        }
         const giaXuat =
           giaoDich === "đổi"
             ? giaNhap
@@ -67,7 +75,15 @@ const SliderSanPham = ({ giaoDich, donHangSelected }) => {
           return (
             <div className="sanPhamWrap" key={index}>
               <div className="sanPhamItem">
-                <img src="" alt="" />
+                {image ? (
+                  <img
+                    className="img"
+                    src={`${LINK_IMAGE}/${image}`}
+                    alt="hình"
+                  />
+                ) : (
+                  <div className="img"></div>
+                )}{" "}
                 <div className="flex aic jcsbw plr10">
                   <h4 className="name">{tenSanPham}</h4>
                   <div className="giaXuat">
