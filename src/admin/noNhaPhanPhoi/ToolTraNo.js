@@ -111,7 +111,9 @@ const ToolTraNo = ({ noTien, noVo, donHangId }) => {
                 const { loaiVoId, loaiVoName } = item;
                 return (
                   <div className="traVoItem" key={index}>
-                    <label htmlFor={loaiVoId}>{loaiVoName.toUpperCase()}</label>
+                    <label htmlFor={loaiVoId}>
+                      {loaiVoName?.toUpperCase()}
+                    </label>
                     <input
                       type="text"
                       id={loaiVoId}
