@@ -19,13 +19,15 @@ const DoiTacItem = ({ doiTac, handleSelectDoiTac, indexItem, index }) => {
         >
           <i className="fa-solid fa-user"></i>
           <h3 className="green">
-            {getRemainingString(tenDoiTac?.toUpperCase(), 20)}
+            {tenDoiTac !== null
+              ? getRemainingString(tenDoiTac?.toUpperCase(), 20)
+              : ""}
           </h3>
         </div>
         <div className="flex aic g10">
           <i className="fa-solid fa-phone"></i>
           <p className="silver bold">
-            <a href="tel:+soDienThoaiDoiTac" className="silver">
+            <a href={`tel:+${soDienThoaiDoiTac}`} className="silver">
               {soDienThoaiDoiTac}
             </a>
           </p>

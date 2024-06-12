@@ -19,7 +19,7 @@ export const capitalizeFirstLetter = (string) => {
   return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
 };
 export const getRemainingString = (str, num) => {
-  if (str.length >= num) {
+  if (str?.length >= num) {
     return str.slice(0, num) + " ...";
   } else {
     return str;
