@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { postChiTiet } from "../../api/postAPI";
 import { useDispatch, useSelector } from "react-redux";
+import { LINK_IMAGE } from "../sanPhamPage/SanPhamItem";
 // import { speak } from "../AdminPage";
 
 const SliderSanPham = ({ giaoDich, donHangSelected }) => {
