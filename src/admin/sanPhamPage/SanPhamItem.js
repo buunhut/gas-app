@@ -35,8 +35,8 @@ const SanPhamItem = ({ item, headers }) => {
   const [editSanPham, setEditSanPham] = useState(null);
 
   const handleChangInput = (e) => {
-    const { className, value } = e.target;
-    if (className !== "tenSanPham") {
+    const { name, value } = e.target;
+    if (name !== "tenSanPham") {
       setEditSanPham({
         sanPhamId,
         tenSanPham,
@@ -47,7 +47,7 @@ const SanPhamItem = ({ item, headers }) => {
         loaiVoId,
         loaiVo,
         tonKho,
-        [className]:
+        [name]:
           +value.replaceAll(/[^0-9]/g, "") === null
             ? 0
             : +value.replaceAll(/[^0-9]/g, ""),
@@ -63,7 +63,7 @@ const SanPhamItem = ({ item, headers }) => {
         loaiVoId,
         loaiVo,
         tonKho,
-        [className]: value,
+        [name]: value,
       });
     }
   };
@@ -141,6 +141,7 @@ const SanPhamItem = ({ item, headers }) => {
             <input
               type="text"
               placeholder="Tên sản phẩm"
+              name="tenSanPham"
               className="tenSanPham borderBottom"
               value={
                 editSanPham?.sanPhamId !== undefined &&
@@ -160,6 +161,7 @@ const SanPhamItem = ({ item, headers }) => {
             <input
               type="text"
               placeholder="Giá nhập"
+              name="giaNhap"
               className="giaNhap borderBottom"
               value={
                 editSanPham?.sanPhamId !== undefined &&
@@ -177,6 +179,7 @@ const SanPhamItem = ({ item, headers }) => {
             <input
               type="text"
               placeholder="Giá đổi"
+              name="giaDoi"
               className="giaDoi borderBottom"
               value={
                 editSanPham?.sanPhamId !== undefined &&
@@ -196,6 +199,7 @@ const SanPhamItem = ({ item, headers }) => {
             <input
               type="text"
               placeholder="Giá đổi gần"
+              name="giaDoiGan"
               className="giaDoiGan borderBottom"
               value={
                 editSanPham?.sanPhamId !== undefined &&
@@ -214,6 +218,7 @@ const SanPhamItem = ({ item, headers }) => {
             <input
               type="text"
               placeholder="Giá đổi xa"
+              name="giaDoiXa"
               className="giaDoiXa borderBottom"
               value={
                 editSanPham?.sanPhamId !== undefined &&
