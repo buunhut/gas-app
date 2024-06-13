@@ -11,7 +11,6 @@ const ListDoiTacNo = ({ listDoiTacNo, indexItem, setIndexItem }) => {
 
   if (indexItem !== -1) {
     listPhieuNo = listDoiTacNo?.[indexItem]?.listPhieuNo;
-    console.log(listPhieuNo);
   } else {
     listPhieuNo = listDoiTacNo.reduce((acc, item) => {
       const { tenDoiTac, listPhieuNo } = item;
@@ -20,7 +19,6 @@ const ListDoiTacNo = ({ listDoiTacNo, indexItem, setIndexItem }) => {
       });
       return acc;
     }, []);
-    console.log(listPhieuNo);
   }
 
   const tenDoiTac = listDoiTacNo?.[indexItem]?.tenDoiTac;

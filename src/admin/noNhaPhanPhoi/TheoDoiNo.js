@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./theodoino.scss";
 import TimKiem from "../khachHangPage/TimKiem";
 import ListDoiTacNo from "./ListDoiTacNo";
@@ -9,6 +9,8 @@ const TheoDoiNo = ({ listData, titlePage }) => {
   const tongTien = listData.reduce((total, item) => total + item.tongTienNo, 0);
   const tongVo = listData.reduce((total, item) => total + item.tongVoNo, 0);
 
+  const [indexItem, setIndexItem] = useState(-1);
+
   return (
     <div className="theoDoiNo">
       <h3 className="title">{titlePage}</h3>
@@ -18,7 +20,7 @@ const TheoDoiNo = ({ listData, titlePage }) => {
           placeholder="Tìm khách hàng nợ..."
         />
         <div className="info">
-          <div>
+          <div onClick={() => setIndexItem(-1)}>
             <p>
               <i className="fa-solid fa-users"></i>
             </p>
@@ -49,7 +51,11 @@ const TheoDoiNo = ({ listData, titlePage }) => {
         </div>
 
         {listData.length > 0 ? (
-          <ListDoiTacNo listDoiTacNo={listData} />
+          <ListDoiTacNo
+            listDoiTacNo={listData}
+            indexItem={indexItem}
+            setIndexItem={setIndexItem}
+          />
         ) : (
           <div className="noDataItem">
             <h1>
