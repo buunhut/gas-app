@@ -109,26 +109,28 @@ const ToolTraNo = ({ noTien, noVo, donHangId }) => {
             <div className="traVo">
               {listLoaiVo?.map((item, index) => {
                 const { loaiVoId, loaiVoName } = item;
-                return (
-                  <div className="traVoItem" key={index}>
-                    <label htmlFor={loaiVoId}>
-                      {loaiVoName?.toUpperCase()}
-                    </label>
-                    <input
-                      type="text"
-                      id={loaiVoId}
-                      value={
-                        traVo?.[loaiVoId]?.soLuong !== undefined
-                          ? traVo?.[loaiVoId]?.soLuong === 0
-                            ? ""
-                            : traVo?.[loaiVoId]?.soLuong.toLocaleString()
-                          : ""
-                      }
-                      onChange={(e) => handleChangeSoVoTra(e, item)}
-                      onBlur={() => handleTraVo(item)}
-                    />
-                  </div>
-                );
+                if (loaiVoName !== null && loaiVoName !== "") {
+                  return (
+                    <div className="traVoItem" key={index}>
+                      <label htmlFor={loaiVoId}>
+                        {loaiVoName?.toUpperCase()}
+                      </label>
+                      <input
+                        type="text"
+                        id={loaiVoId}
+                        value={
+                          traVo?.[loaiVoId]?.soLuong !== undefined
+                            ? traVo?.[loaiVoId]?.soLuong === 0
+                              ? ""
+                              : traVo?.[loaiVoId]?.soLuong.toLocaleString()
+                            : ""
+                        }
+                        onChange={(e) => handleChangeSoVoTra(e, item)}
+                        onBlur={() => handleTraVo(item)}
+                      />
+                    </div>
+                  );
+                }
               })}
             </div>
           )}

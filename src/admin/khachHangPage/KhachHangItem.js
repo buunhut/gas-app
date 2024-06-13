@@ -19,11 +19,10 @@ const KhachHangItem = ({ item }) => {
 
   const [doiTacSelected, setDoiTacSelected] = useState(null);
   const handleChangeInput = (e, item) => {
-    const { className, value } = e.target;
+    const { name, value } = e.target;
     setDoiTacSelected({
       ...doiTac,
-      [className]:
-        className === "soDienThoaiDoiTac" ? value.replace(/\D/g, "") : value,
+      [name]: name === "soDienThoaiDoiTac" ? value.replace(/\D/g, "") : value,
     });
   };
 
@@ -54,6 +53,7 @@ const KhachHangItem = ({ item }) => {
           <input
             type="text"
             placeholder="Tên khách hàng"
+            name="tenDoiTac"
             className="tenDoiTac borderBottom"
             value={
               doiTacSelected?.doiTacId === doiTacId
@@ -73,6 +73,7 @@ const KhachHangItem = ({ item }) => {
           <input
             type="text"
             placeholder="Điện thoại"
+            name="soDienThoaiDoiTac"
             className="soDienThoaiDoiTac borderBottom"
             value={
               doiTacSelected?.doiTacId === doiTacId
@@ -93,6 +94,7 @@ const KhachHangItem = ({ item }) => {
           <input
             type="text"
             placeholder="Địa chỉ"
+            name="diaChiDoiTac"
             className="diaChiDoiTac borderBottom"
             value={
               doiTacSelected?.doiTacId === doiTacId
@@ -114,6 +116,7 @@ const KhachHangItem = ({ item }) => {
             <input
               type="text"
               placeholder="Vị trí"
+              name="viTri"
               className="viTri borderBottom"
               value={
                 doiTacSelected?.doiTacId === doiTacId

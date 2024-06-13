@@ -25,7 +25,7 @@ const DoiTacItem = ({ doiTac, handleSelectDoiTac, indexItem, index }) => {
         <div className="flex aic g10">
           <i className="fa-solid fa-phone"></i>
           <p className="silver bold">
-            <a href="tel:+soDienThoaiDoiTac" className="silver">
+            <a href={`tel:+${soDienThoaiDoiTac}`} className="silver">
               {soDienThoaiDoiTac}
             </a>
           </p>

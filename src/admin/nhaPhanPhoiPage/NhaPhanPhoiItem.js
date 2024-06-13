@@ -11,14 +11,13 @@ const NhaPhanPhoiItem = ({ item }) => {
   const [doiTacSelected, setDoiTacSelected] = useState(null);
 
   const handleChangeInput = (e, item) => {
-    const { className, value } = e.target;
+    const { name, value } = e.target;
     setDoiTacSelected({
       doiTacId,
       soDienThoaiDoiTac,
       tenDoiTac,
       diaChiDoiTac,
-      [className]:
-        className === "soDienThoaiDoiTac" ? value.replace(/\D/g, "") : value,
+      [name]: name === "soDienThoaiDoiTac" ? value.replace(/\D/g, "") : value,
     });
   };
 
@@ -49,6 +48,7 @@ const NhaPhanPhoiItem = ({ item }) => {
           <input
             type="text"
             placeholder="Tên nhà phân phối"
+            name="tenDoiTac"
             className="tenDoiTac  borderBottom"
             value={
               doiTacSelected?.doiTacId === doiTacId
@@ -68,6 +68,7 @@ const NhaPhanPhoiItem = ({ item }) => {
           <input
             type="text"
             placeholder="Điện thoại"
+            name="soDienThoaiDoiTac"
             className="soDienThoaiDoiTac borderBottom"
             value={
               doiTacSelected?.doiTacId === doiTacId
@@ -88,6 +89,7 @@ const NhaPhanPhoiItem = ({ item }) => {
             <input
               type="text"
               placeholder="Địa chỉ"
+              name="diaChiDoiTac"
               className="diaChiDoiTac borderBottom"
               value={
                 doiTacSelected?.doiTacId === doiTacId
