@@ -60,6 +60,7 @@ export const deleteSanPham = async (data, headers, dispatch) => {
       const { statusCode } = res.data;
       if (statusCode === 200) {
         await getDanhMuc(headers, dispatch);
+        await getSanPham(headers, dispatch);
       }
     })
     .catch((err) => {

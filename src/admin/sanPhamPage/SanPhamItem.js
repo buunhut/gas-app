@@ -81,7 +81,7 @@ const SanPhamItem = ({ item, headers }) => {
       }`
     );
     if (confirm) {
-      deleteSanPham(data, headers);
+      deleteSanPham(data, headers, dispatch);
     }
   };
 
