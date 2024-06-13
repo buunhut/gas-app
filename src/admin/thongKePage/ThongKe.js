@@ -18,6 +18,14 @@ const ThongKe = () => {
 
   const [listBinhNguyen, setListBinhNguyen] = useState([]);
   const [listSanPhamBan, setListSanPhamBan] = useState([]);
+  const tongBinhNguyen = listBinhNguyen?.reduce(
+    (total, item) => total + item.tonKho,
+    0
+  );
+  const tongVoKhong = listLoaiVo?.reduce(
+    (total, item) => total + item.tonKho,
+    0
+  );
   useEffect(() => {
     fetchData();
   }, []);
@@ -55,7 +63,9 @@ const ThongKe = () => {
         listBaoCao?.tongTienTrongNgay !== 0 ? (
           <>
             <div className="baoCaoTienItem">
-              <h5 className="title">Tiền mặt</h5>
+              <div className="title">
+                <h5>Tiền mặt</h5>
+              </div>
 
               <div>
                 <p>Tổng thu</p>
@@ -95,7 +105,9 @@ const ThongKe = () => {
         {listLoaiVo.length > 0 && (
           <>
             <div className="baoCaoContentItem">
-              <h5 className="title">Vỏ không</h5>
+              <div className="title">
+                <h5>Vỏ không - {tongVoKhong?.toLocaleString()}</h5>
+              </div>
 
               {listLoaiVo?.map((item, index) => {
                 const { loaiVoName, tonKho } = item;
@@ -116,7 +128,9 @@ const ThongKe = () => {
         {listBinhNguyen.length > 0 && (
           <>
             <div className="baoCaoContentItem">
-              <h5 className="title">Bình nguyên</h5>
+              <div className="title">
+                <h5>Bình nguyên - {tongBinhNguyen?.toLocaleString()}</h5>
+              </div>
 
               {listBinhNguyen?.map((item, index) => {
                 const { tenSanPham, tonKho } = item;
