@@ -2,15 +2,29 @@ import React, { useState } from "react";
 import ListPhieuNo from "./ListPhieuNo";
 import DoiTacItem from "./DoiTacItem";
 
-const ListDoiTacNo = ({ listDoiTacNo }) => {
-  const [indexItem, setIndexItem] = useState(-1);
-
-  const listPhieuNo = listDoiTacNo?.[indexItem]?.listPhieuNo;
-  const tenDoiTac = listDoiTacNo?.[indexItem]?.tenDoiTac;
-
+const ListDoiTacNo = ({ listDoiTacNo, indexItem, setIndexItem }) => {
   const handleSelectDoiTac = (index) => {
     setIndexItem(index);
   };
+
+  let listPhieuNo = [];
+
+  if (indexItem !== -1) {
+    listPhieuNo = listDoiTacNo?.[indexItem]?.listPhieuNo;
+    console.log(listPhieuNo);
+  } else {
+    listPhieuNo = listDoiTacNo.reduce((acc, item) => {
+      const { tenDoiTac, listPhieuNo } = item;
+      listPhieuNo.forEach((phieuNo) => {
+        acc.push({ tenDoiTac, ...phieuNo });
+      });
+      return acc;
+    }, []);
+    console.log(listPhieuNo);
+  }
+
+  const tenDoiTac = listDoiTacNo?.[indexItem]?.tenDoiTac;
+
   return (
     <div>
       <div className="slider">
@@ -26,6 +40,7 @@ const ListDoiTacNo = ({ listDoiTacNo }) => {
           );
         })}
       </div>
+
       <ListPhieuNo tenDoiTac={tenDoiTac} listPhieuNo={listPhieuNo} />
     </div>
   );

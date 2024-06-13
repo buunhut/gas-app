@@ -6,10 +6,11 @@ const ListPhieuNo = ({ listPhieuNo, tenDoiTac }) => {
   return (
     <div className="content">
       {listPhieuNo?.map((item, index) => {
+        const { tenDoiTac: doiTac } = item;
         return (
           <div key={index} className="noItemWrap">
             <DetailItem
-              tenDoiTac={tenDoiTac}
+              tenDoiTac={doiTac || tenDoiTac}
               item={item}
               showId={showId}
               setShowId={setShowId}
