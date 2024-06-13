@@ -28,7 +28,7 @@ const PhieuContent = ({ item, toShow, sort }) => {
     const { name, value } = e.target;
     if (name === "donGia") {
       setEditDonGiaChiTiet({
-        [chiTietId]: +value.replaceAll(/[^0-9]/g, ""),
+        [chiTietId]: value === "" ? 0 : +value.replaceAll(/[^0-9]/g, ""),
       });
     } else if (name === "soLuong") {
       setEditSoLuongChiTiet({

@@ -28,7 +28,7 @@ const PhieuContent = ({ item, toShow, sort }) => {
     const { name, value } = e.target;
     if (name === "donGia") {
       setEditDonGiaChiTiet({
-        [chiTietId]: +value.replaceAll(/[^0-9]/g, ""),
+        [chiTietId]: value === "" ? 0 : +value.replaceAll(/[^0-9]/g, ""),
       });
     } else if (name === "soLuong") {
       setEditSoLuongChiTiet({
@@ -38,7 +38,7 @@ const PhieuContent = ({ item, toShow, sort }) => {
   };
   const handleUpdateChiTiet = async (item, sort) => {
     const { chiTietId } = item;
-    if (editDonGiaChiTiet?.[chiTietId]) {
+    if (editDonGiaChiTiet?.[chiTietId] !== undefined) {
       const confirm = window.confirm(
         `Bạn có muốn sửa giá ${editDonGiaChiTiet?.[
           chiTietId
@@ -172,6 +172,7 @@ const PhieuContent = ({ item, toShow, sort }) => {
                   <input
                     type="text"
                     placeholder="SL"
+                    className="soLuong"
                     name="soLuong"
                     style={{
                       border: "none",
@@ -206,6 +207,7 @@ const PhieuContent = ({ item, toShow, sort }) => {
                     type="text"
                     placeholder="Đơn giá"
                     name="donGia"
+                    className="donGia"
                     style={{
                       border: "none",
                       height: "30px",
