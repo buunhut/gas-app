@@ -106,7 +106,7 @@ const ThongKe = () => {
           <>
             <div className="baoCaoContentItem">
               <div className="title">
-                <h5>Vỏ không - {tongVoKhong?.toLocaleString()}</h5>
+                <h5>Vỏ không ({tongVoKhong?.toLocaleString()})</h5>
               </div>
 
               {listLoaiVo?.map((item, index) => {
@@ -129,7 +129,7 @@ const ThongKe = () => {
           <>
             <div className="baoCaoContentItem">
               <div className="title">
-                <h5>Bình nguyên - {tongBinhNguyen?.toLocaleString()}</h5>
+                <h5>Bình nguyên ({tongBinhNguyen?.toLocaleString()})</h5>
               </div>
 
               {listBinhNguyen?.map((item, index) => {
