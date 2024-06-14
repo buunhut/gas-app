@@ -268,7 +268,7 @@ export const postTraTien = async (data, headers, dispatch) => {
     });
 };
 
-export const postTraVo = async (data, headers, dispatch) => {
+export const postTraVo = async (data, headers, dispatch, sort) => {
   await axios({
     method: "post",
     url: `${API_URL}/tra-vo`,
@@ -308,7 +308,7 @@ export const postTraVo = async (data, headers, dispatch) => {
       console.log(err);
     });
 };
-export const postTraDuPhieu = async (data, headers, dispatch) => {
+export const postTraDuPhieu = async (data, headers, dispatch, sort) => {
   await axios({
     method: "post",
     url: `${API_URL}/phieu-tra-du`,
