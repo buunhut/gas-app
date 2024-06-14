@@ -6,7 +6,10 @@ import { getKhachHang } from "../../api/getAPI";
 
 const KhachHang = () => {
   const dispatch = useDispatch();
-  const { headers, listKhachHang } = useSelector((state) => state.dataSlice);
+  const { headers, listKhachHang } = useSelector(
+    (state) => state.dataSlice
+  );
+
 
   const soLuongKhachHang = listKhachHang.length;
 

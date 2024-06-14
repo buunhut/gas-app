@@ -36,8 +36,16 @@ const NhaPhanPhoiItem = ({ item }) => {
     }
   };
 
-  const handleSuaNhaPhanPhoi = () => {
-    putNhaPhanPhoi(doiTacSelected, headers, dispatch);
+  const handleSuaNhaPhanPhoi = async () => {
+    const data = doiTacSelected;
+    if (data !== null) {
+      const res = await putNhaPhanPhoi(doiTacSelected, headers, dispatch);
+      if (res === 209) {
+        speak("trùng tên rồi, nhập tên khác");
+        window.alert("Trùng tên, nhập tên khác");
+        setDoiTacSelected(null);
+      }
+    }
   };
 
   return (

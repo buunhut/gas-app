@@ -12,6 +12,7 @@ import {
   getNoNhaPhanPhoi,
 } from "./getAPI";
 import { postSortPhieu } from "./postAPI";
+import { updateAlert } from "../redux/dataSlice";
 
 export const putLoaiVo = async (data, headers, dispatch) => {
   await axios({
@@ -68,7 +69,7 @@ export const putSanPham = async (data, headers, dispatch) => {
 };
 
 export const putKhachHang = async (data, headers, dispatch) => {
-  await axios({
+  const res = await axios({
     method: "put",
     url: `${API_URL}/doi-tac`,
     data,
@@ -78,15 +79,18 @@ export const putKhachHang = async (data, headers, dispatch) => {
       const { statusCode } = res.data;
       if (statusCode === 200) {
         getKhachHang(headers, dispatch);
+      } else if (statusCode === 209) {
+        return statusCode;
       }
     })
     .catch((err) => {
       console.log(err);
     });
+  return res;
 };
 
 export const putNhaPhanPhoi = async (data, headers, dispatch) => {
-  await axios({
+  const res = await axios({
     method: "put",
     url: `${API_URL}/doi-tac`,
     data,
@@ -96,11 +100,14 @@ export const putNhaPhanPhoi = async (data, headers, dispatch) => {
       const { statusCode } = res.data;
       if (statusCode === 200) {
         await getNhaPhanPhoi(headers, dispatch);
+      } else if (statusCode === 209) {
+        return statusCode;
       }
     })
     .catch((err) => {
       console.log(err);
     });
+  return res;
 };
 
 export const putChiTiet = async (data, headers, dispatch, sort) => {

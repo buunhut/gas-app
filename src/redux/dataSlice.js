@@ -4,6 +4,7 @@ const initialState = {
   user: null,
   headers: null,
   isLoading: false,
+  alert: null,
   listLoaiVo: [],
   listDanhMuc: [],
   listSanPham: [],
@@ -34,6 +35,9 @@ const dataSlice = createSlice({
     },
     updateIsLoading(state, action) {
       state.isLoading = action.payload;
+    },
+    updateAlert(state, action) {
+      state.alert = action.payload;
     },
     updateListLoaiVo(state, action) {
       state.listLoaiVo = action.payload;
@@ -81,6 +85,7 @@ const dataSlice = createSlice({
 export const {
   updateUser,
   updateIsLoading,
+  updateAlert,
   updateListLoaiVo,
   updateListDanhMuc,
   updateListSanPham,

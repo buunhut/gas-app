@@ -3,6 +3,7 @@ import { deleteKhachHang } from "../../api/deleteAPI";
 import { useDispatch, useSelector } from "react-redux";
 import { putKhachHang } from "../../api/putAPI";
 import "./khachhang.scss";
+import { speak } from "../AdminPage";
 
 const KhachHangItem = ({ item }) => {
   const dispatch = useDispatch();
@@ -41,8 +42,16 @@ const KhachHangItem = ({ item }) => {
     }
   };
 
-  const handleSuaKhachHang = () => {
-    putKhachHang(doiTacSelected, headers, dispatch);
+  const handleSuaKhachHang = async () => {
+    const data = doiTacSelected;
+    if (data !== null) {
+      const res = await putKhachHang(doiTacSelected, headers, dispatch);
+      if (res === 209) {
+        speak("trùng tên rồi, nhập tên khác");
+        window.alert("Trùng tên, nhập tên khác");
+        setDoiTacSelected(null);
+      }
+    }
   };
 
   return (
