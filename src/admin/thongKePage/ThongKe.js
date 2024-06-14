@@ -26,6 +26,11 @@ const ThongKe = () => {
     (total, item) => total + item.tonKho,
     0
   );
+  const tongSanPhamBan = listSanPhamBan?.reduce(
+    (total, item) => total + item.tonKho,
+    0
+  );
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -151,7 +156,7 @@ const ThongKe = () => {
           <>
             <div className="baoCaoContentItem">
               <div className="title">
-                <h5>Sản phẩm khác</h5>
+                <h5>Sản phẩm khác (${tongSanPhamBan?.toLocaleString()})</h5>
               </div>
               {listSanPhamBan?.map((item, index) => {
                 const { tenSanPham, tonKho } = item;
