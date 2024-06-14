@@ -31,9 +31,21 @@ const HomePage = () => {
     }, [index, text, speed]);
 
     return (
-      <div className="typing-container">
-        <span>{displayedText}</span>
-        <span className={`cursor ${isTypingComplete ? "hidden" : ""}`}>|</span>
+      <div className="introduce">
+        <div className="typing-container">
+          <span>{displayedText}</span>
+          <span className={`cursor ${isTypingComplete ? "hidden" : ""}`}>
+            |
+          </span>
+        </div>
+        <button
+          style={{ opacity: isTypingComplete ? "1" : "0" }}
+          className="dangNhap"
+          type="button"
+          onClick={() => navigate("dang-nhap")}
+        >
+          Dùng thử ngay
+        </button>
       </div>
     );
   };
@@ -45,21 +57,10 @@ const HomePage = () => {
       <div className="black"></div>
 
       <div className="homepage">
-        {/* <LottieAnimation /> */}
-
-        <div className="introduce">
-          <TypingEffect
-            text="Phần mềm quản lý cửa hàng kinh doanh Gas"
-            speed={100}
-          />
-        </div>
-        <button
-          className="dangNhap"
-          type="button"
-          onClick={() => navigate("dang-nhap")}
-        >
-          Dùng thử ngay
-        </button>
+        <TypingEffect
+          text="Phần mềm quản lý cửa hàng kinh doanh Gas"
+          speed={100}
+        />
       </div>
     </>
   );
