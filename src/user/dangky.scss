@@ -1,4 +1,4 @@
-.dangNhap {
+.dangKy {
     padding: 10px;
 
     .icon {
@@ -28,11 +28,15 @@
         form {
             .inputItem {
                 margin-top: 5px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
 
                 input {
                     height: 32px;
                     padding: 0 5px;
                 }
+
 
                 i.show {
                     margin-right: 3px;
@@ -44,6 +48,7 @@
 
                     }
                 }
+
 
             }
 
@@ -59,7 +64,6 @@
                 font-weight: bold;
                 transition: all .5s;
                 border-radius: 5px;
-                cursor: pointer;
 
                 &:hover {
                     background-color: #009900;
@@ -78,6 +82,17 @@
 
             &:hover {
                 color: orangered;
+            }
+        }
+
+        .contact {
+            margin-top: 30px;
+            text-align: center;
+
+            a {
+                text-decoration: none;
+                color: silver;
+                font-size: 12px;
             }
         }
     }

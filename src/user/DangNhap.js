@@ -10,6 +10,8 @@ export const API_URL = process.env.REACT_APP_LINK_API;
 const DangNhap = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const [show, setShow] = useState(false);
   const [data, setData] = useState({
     userPhone: null,
     userPass: null,
@@ -63,16 +65,35 @@ const DangNhap = () => {
           <div className="inputItem">
             <i className="fa-solid fa-key"></i>
             <input
-              type="password"
+              type={show ? "text" : "password"}
               placeholder="Mật khẩu"
               id="userPass"
               onChange={handleChangeInput}
             />
+            {show ? (
+              <i
+                className="fa-regular fa-eye-slash show"
+                onClick={() => setShow(!show)}
+              ></i>
+            ) : (
+              <i
+                className="fa-regular fa-eye show"
+                onClick={() => setShow(!show)}
+              ></i>
+            )}
           </div>
           <button type="button" onClick={handleDangNhap}>
             Đăng nhập
           </button>
         </form>
+        <button
+          className="dangKyNgay"
+          onClick={() => {
+            navigate("/dang-ky");
+          }}
+        >
+          Chưa có tài khoản - đăng ký ngay
+        </button>
       </div>
     </div>
   );
