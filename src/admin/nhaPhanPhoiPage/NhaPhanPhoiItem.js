@@ -3,6 +3,7 @@ import { deleteNhaPhanPhoi } from "../../api/deleteAPI";
 import { useDispatch, useSelector } from "react-redux";
 import { putNhaPhanPhoi } from "../../api/putAPI";
 import "./nhaphanphoi.scss";
+import { speak } from "../AdminPage";
 
 const NhaPhanPhoiItem = ({ item }) => {
   const dispatch = useDispatch();
