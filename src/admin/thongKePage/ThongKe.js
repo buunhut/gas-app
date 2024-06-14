@@ -149,8 +149,10 @@ const ThongKe = () => {
         )}
         {listSanPhamBan.length > 0 && (
           <>
-            <h5 className="title">Sản phẩm khác</h5>
             <div className="baoCaoContentItem">
+              <div className="title">
+                <h5>Sản phẩm khác</h5>
+              </div>
               {listSanPhamBan?.map((item, index) => {
                 const { tenSanPham, tonKho } = item;
                 return (
