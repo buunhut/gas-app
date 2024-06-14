@@ -290,6 +290,7 @@ const PhieuContent = ({ item, toShow, sort }) => {
 
               <div>
                 <input
+                  className="focus"
                   style={{ textAlign: "right" }}
                   type="text"
                   value={

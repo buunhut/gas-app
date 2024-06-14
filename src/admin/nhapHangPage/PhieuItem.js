@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { postLuuPhieu } from "../../api/postAPI";
 
-import TooleTraNo from "../khachNoPage/ToolTraNo";
+import TooleTraNo from "../noNhaPhanPhoi/ToolTraNo";
 import "../khachNoPage/theodoino.scss";
 
 import { deleteDonHang } from "../../api/deleteAPI";

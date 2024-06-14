@@ -323,6 +323,12 @@ input {
     }
 }
 
+input.focus {
+    &:focus {
+        border: 1px solid silver;
+        border-radius: 5px;
+    }
+}
 
 
 
