@@ -147,14 +147,30 @@ export const putTraTien = async (data, headers, dispatch, sort) => {
     data,
   })
     .then(async (res) => {
-      const { statusCode } = res.data;
+      const { statusCode, content } = res.data;
       if (statusCode === 200) {
-        if (sort) {
-          await postSortPhieu(sort, headers, dispatch);
+        if (content.trangThai === "pending") {
+          if (content.loaiPhieu === "px") {
+            await getListPhieuXuatPending(headers, dispatch);
+          } else if (content.loaiPhieu === "pn") {
+            await getListPhieuNhapPending(headers, dispatch);
+          }
+        } else if (content.trangThai === "saving") {
+          if (content.loaiPhieu === "px") {
+            if (sort) {
+              await postSortPhieu(sort, headers, dispatch);
+              return;
+            }
+            await getKhachHangNo(headers, dispatch);
+          } else if (content.loaiPhieu === "pn") {
+            //gọi nợ nhà phân phôi
+            if (sort) {
+              await postSortPhieu(sort, headers, dispatch);
+              return;
+            }
+            await getNoNhaPhanPhoi(headers, dispatch);
+          }
         }
-        await getListPhieuXuatPending(headers, dispatch);
-        // await getListPhieuXuatDaGiao(headers, dispatch);
-        await getKhachHangNo(headers, dispatch);
       }
     })
     .catch((err) => {
