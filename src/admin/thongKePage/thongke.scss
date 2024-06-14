@@ -23,6 +23,31 @@
         margin-top: 5px;
         padding: 10px;
 
+        .sumAll {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            position: absolute;
+            top: 56px;
+            right: 10px;
+            height: 50px;
+            width: 50px;
+
+            background-color: #009900;
+            border-radius: 50%;
+
+            i {
+                color: white;
+            }
+
+            span {
+                font-size: 18px;
+                font-weight: bold;
+                color: white;
+            }
+        }
+
         h5.title {
             display: inline-block;
             background-color: #009900;
@@ -34,7 +59,7 @@
 
         .baoCaoTienItem {
             margin-top: 20px;
-            padding: 30px 10px 10px;
+            padding: 22px 10px 10px;
             box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
             text-align: center;
             display: flex;
@@ -84,6 +109,7 @@
 
 
         }
+
 
         .baoCaoContentItem {
             margin-top: 20px;

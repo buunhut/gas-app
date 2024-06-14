@@ -19,7 +19,10 @@ const SliderSanPham = ({ giaoDich, donHangSelected }) => {
     });
   };
 
+  // console.log(giaoDich);
+
   const handleXuatHang = (item) => {
+    // console.log(item);
     const { donHangId } = donHangSelected;
     const { sanPhamId, tenSanPham, loaiVo, loaiVoId } = item;
     // speak(`xuất 1 ${tenSanPham}`);

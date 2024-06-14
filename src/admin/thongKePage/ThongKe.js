@@ -2,19 +2,33 @@ import React, { useEffect, useState } from "react";
 import "./thongke.scss";
 import { useDispatch, useSelector } from "react-redux";
 
-import { getDanhMuc, getLoaiVo, getTraTien } from "../../api/getAPI";
+import {
+  getDanhMuc,
+  getKhachHangNo,
+  getLoaiVo,
+  getTraTien,
+} from "../../api/getAPI";
 import CountUp from "react-countup";
 import moment from "moment";
 const ThongKe = () => {
   const dispatch = useDispatch();
-  const { headers, listBaoCao, listLoaiVo, listDanhMuc } = useSelector(
-    (state) => state.dataSlice
-  );
+  const { headers, listBaoCao, listLoaiVo, listDanhMuc, listKhachHangNo } =
+    useSelector((state) => state.dataSlice);
   const fetchData = async () => {
     await getTraTien(headers, dispatch);
     await getLoaiVo(headers, dispatch);
     await getDanhMuc(headers, dispatch);
+    await getKhachHangNo(headers, dispatch);
   };
+
+  const tongNoTien = listKhachHangNo.reduce(
+    (total, item) => total + item.tongTienNo,
+    0
+  );
+  const tongNoVo = listKhachHangNo.reduce(
+    (total, item) => total + item.tongVoNo,
+    0
+  );
 
   const [listBinhNguyen, setListBinhNguyen] = useState([]);
   const [listSanPhamBan, setListSanPhamBan] = useState([]);
@@ -63,6 +77,17 @@ const ThongKe = () => {
           <h3>Báo cáo</h3>
           <h6>{today}</h6>
         </div>
+
+        <div className="sumAll">
+          {/* <p>Cộng 3 mục:</p> */}
+          <i className="fa-solid fa-fire-flame-simple"></i>
+          <CountUp
+            end={tongNoVo + tongBinhNguyen + tongVoKhong}
+            duration={1}
+            separator=","
+          />
+        </div>
+
         {listBaoCao?.tongThuTien !== 0 ||
         listBaoCao?.tongChiTien !== 0 ||
         listBaoCao?.tongTienTrongNgay !== 0 ? (
@@ -106,6 +131,33 @@ const ThongKe = () => {
             </div>
           </>
         ) : null}
+
+        {(tongNoTien !== 0 || tongNoVo !== 0) && (
+          <div
+            className="baoCaoTienItem"
+            style={{ justifyContent: "space-around" }}
+          >
+            <div className="title">
+              <h5>Khách nợ </h5>
+            </div>
+            {/* <div>
+              <div>Khách nợ:</div>
+              <h4>{listKhachHangNo.length}</h4>
+            </div> */}
+
+            <div>
+              <p>Nợ vỏ</p>
+              <CountUp end={tongNoVo} duration={1} separator="," />
+              {/* <h4>{tongNoVo?.toLocaleString()}</h4> */}
+            </div>
+            <div>
+              <p>Nợ tiền</p>
+              <CountUp end={tongNoTien} duration={1} separator="," />
+
+              {/* <h4>{tongNoTien?.toLocaleString()}</h4> */}
+            </div>
+          </div>
+        )}
 
         {listLoaiVo.length > 0 && (
           <>
