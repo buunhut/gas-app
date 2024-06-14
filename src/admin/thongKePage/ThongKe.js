@@ -156,7 +156,7 @@ const ThongKe = () => {
           <>
             <div className="baoCaoContentItem">
               <div className="title">
-                <h5>Sản phẩm khác (${tongSanPhamBan?.toLocaleString()})</h5>
+                <h5>Sản phẩm khác ({tongSanPhamBan?.toLocaleString()})</h5>
               </div>
               {listSanPhamBan?.map((item, index) => {
                 const { tenSanPham, tonKho } = item;
