@@ -275,22 +275,31 @@ export const postTraVo = async (data, headers, dispatch) => {
     headers,
     data,
   })
-    .then((res) => {
+    .then(async (res) => {
       const { statusCode, content } = res.data;
       if (statusCode === 200) {
         if (content.trangThai === "pending") {
           if (content.loaiPhieu === "px") {
-            getListPhieuXuatPending(headers, dispatch);
+            await getListPhieuXuatPending(headers, dispatch);
           } else if (content.loaiPhieu === "pn") {
             //gọi phiếu nhập pending
             // getListPhieuXuatPending(headers, dispatch);
+            await getListPhieuNhapPending(headers, dispatch);
           }
         } else if (content.trangThai === "saving") {
           if (content.loaiPhieu === "px") {
-            getKhachHangNo(headers, dispatch);
+            if (sort) {
+              await postSortPhieu(sort, headers, dispatch);
+              return;
+            }
+            await getKhachHangNo(headers, dispatch);
           } else if (content.loaiPhieu === "pn") {
             //gọi nợ nhà phân phôi
-            // getKhachHangNo(headers, dispatch);
+            if (sort) {
+              await postSortPhieu(sort, headers, dispatch);
+              return;
+            }
+            await getNoNhaPhanPhoi(headers, dispatch);
           }
         }
       }
@@ -309,14 +318,27 @@ export const postTraDuPhieu = async (data, headers, dispatch) => {
     .then(async (res) => {
       const { statusCode, content } = res.data;
       if (statusCode === 200) {
-        if (content === "px") {
-          await getKhachHangNo(headers, dispatch);
-          await getListPhieuXuatPending(headers, dispatch);
-          await getSanPham(headers, dispatch);
-        } else {
-          await getNoNhaPhanPhoi(headers, dispatch);
-          await getListPhieuNhapPending(headers, dispatch);
-          await getSanPham(headers, dispatch);
+        if (content.trangThai === "pending") {
+          if (content.loaiPhieu === "px") {
+            await getListPhieuXuatPending(headers, dispatch);
+          } else if (content.loaiPhieu === "pn") {
+            await getListPhieuNhapPending(headers, dispatch);
+          }
+        } else if (content.trangThai === "saving") {
+          if (content.loaiPhieu === "px") {
+            if (sort) {
+              await postSortPhieu(sort, headers, dispatch);
+              return;
+            }
+            await getKhachHangNo(headers, dispatch);
+          } else if (content.loaiPhieu === "pn") {
+            //gọi nợ nhà phân phôi
+            if (sort) {
+              await postSortPhieu(sort, headers, dispatch);
+              return;
+            }
+            await getNoNhaPhanPhoi(headers, dispatch);
+          }
         }
       }
     })
