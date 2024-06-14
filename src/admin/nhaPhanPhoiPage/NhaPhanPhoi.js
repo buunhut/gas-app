@@ -4,15 +4,11 @@ import NhaPhanPhoiItem from "./NhaPhanPhoiItem";
 import { postNhaPhanPhoi, postTimKiemNhaPhanPhoi } from "../../api/postAPI";
 import { getNhaPhanPhoi } from "../../api/getAPI";
 
-// export const handleTimNhaPhanPhoi = (e, headers, dispatch) => {
-//   const keyword = e.target.value.trim();
-//   const data = { keyword };
-//   postTimKiemNhaPhanPhoi(data, headers, dispatch);
-// };
-
 const NhaPhanPhoi = () => {
   const dispatch = useDispatch();
   const { headers, listNhaPhanPhoi } = useSelector((state) => state.dataSlice);
+
+  const soLuongNhaPhanPhoi = listNhaPhanPhoi.length;
 
   const handleTaoNhaPhanPhoi = () => {
     postNhaPhanPhoi(headers, dispatch);
@@ -29,7 +25,9 @@ const NhaPhanPhoi = () => {
   }, []);
   return (
     <div>
-      <h3 className="mtb10 tac">Danh sách nhà phân phối</h3>
+      <h3 className="mtb10 tac">
+        Danh sách nhà phân phối ({soLuongNhaPhanPhoi.toLocaleString()})
+      </h3>
       <div className="flex aic">
         <button className="btn ml10" onClick={handleTaoNhaPhanPhoi}>
           <i className="fa-solid fa-user-plus"></i>

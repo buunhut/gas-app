@@ -4,15 +4,11 @@ import KhachHangItem from "./KhachHangItem";
 import { postKhachHang, postTimKiemKhachHang } from "../../api/postAPI";
 import { getKhachHang } from "../../api/getAPI";
 
-// export const handleTimKhachHang = (e, headers, dispatch) => {
-//   const keyword = e.target.value.trim();
-//   const data = { keyword };
-//   postTimKiemKhachHang(data, headers, dispatch);
-// };
-
 const KhachHang = () => {
   const dispatch = useDispatch();
   const { headers, listKhachHang } = useSelector((state) => state.dataSlice);
+
+  const soLuongKhachHang = listKhachHang.length;
 
   const handleTaoKhachHang = () => {
     postKhachHang(headers, dispatch);
@@ -29,7 +25,9 @@ const KhachHang = () => {
   }, []);
   return (
     <div>
-      <h3 className="mtb10 tac">Danh sách khách hàng</h3>
+      <h3 className="mtb10 tac">
+        Danh sách khách hàng ({soLuongKhachHang.toLocaleString()})
+      </h3>
       <div className="flex aic">
         <button className="btn ml10" onClick={handleTaoKhachHang}>
           <i className="fa-solid fa-user-plus"></i>
