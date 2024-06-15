@@ -70,14 +70,26 @@ const DangKy = () => {
             Đăng ký
           </button>
         </form>
-        <button
-          className="dangKyNgay"
-          onClick={() => {
-            navigate("/dang-nhap");
-          }}
-        >
-          <i className="fa-solid fa-reply"></i> Quay về trang đăng nhập
-        </button>
+        <div>
+          <button
+            className="dangKyNgay"
+            onClick={() => {
+              navigate("/dang-nhap");
+            }}
+          >
+            <i className="fa-solid fa-reply"></i> Quay về trang đăng nhập
+          </button>
+        </div>
+        <div className="mt10">
+          <button
+            className="dangKyNgay"
+            onClick={() => {
+              navigate("/");
+            }}
+          >
+            <i className="fa-solid fa-reply"></i> Quay về trang chủ
+          </button>
+        </div>
 
         <div className="contact">
           <a href="tel:+909240886">Zero - 0909240886</a>

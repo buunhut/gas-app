@@ -4,6 +4,7 @@ import "./chitietban.scss";
 import { postSortPhieu } from "../../api/postAPI";
 import ChiTietInfo from "./ChiTietInfo";
 import ChiTietItem from "./ChiTietItem";
+import moment from "moment";
 
 const ChiTietNhap = () => {
   const dispatch = useDispatch();
@@ -23,7 +24,9 @@ const ChiTietNhap = () => {
 
   // console.log(uniqueNhaPhanPhoi);
 
-  const date = new Date().toISOString().split("T")[0];
+  // const date = new Date().toISOString().split("T")[0];
+  const date = moment().utcOffset(7).format("YYYY-MM-DD");
+
   const [sort, setSort] = useState({
     fromDay: date,
     toDay: null,
