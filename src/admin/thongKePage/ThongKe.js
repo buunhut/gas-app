@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   getDanhMuc,
   getKhachHangNo,
+  getKho,
   getLoaiVo,
   getTraTien,
 } from "../../api/getAPI";
@@ -12,14 +13,24 @@ import CountUp from "react-countup";
 import moment from "moment";
 const ThongKe = () => {
   const dispatch = useDispatch();
-  const { headers, listBaoCao, listLoaiVo, listDanhMuc, listKhachHangNo } =
-    useSelector((state) => state.dataSlice);
+  const {
+    headers,
+    listBaoCao,
+    listLoaiVo,
+    listDanhMuc,
+    listKhachHangNo,
+    listKho,
+  } = useSelector((state) => state.dataSlice);
   const fetchData = async () => {
     await getTraTien(headers, dispatch);
     await getLoaiVo(headers, dispatch);
     await getDanhMuc(headers, dispatch);
     await getKhachHangNo(headers, dispatch);
+    //demo get kho api
+    // await getKho(headers, dispatch);
   };
+
+  // console.log("báo cáo", listKho);
 
   const tongNoTien = listKhachHangNo.reduce(
     (total, item) => total + item.tongTienNo,

@@ -18,6 +18,7 @@ const initialState = {
   listPhieuNhapSaving: [],
   listDonHang: [],
   listBaoCao: null,
+  listKho: [],
 };
 
 const dataSlice = createSlice({
@@ -79,6 +80,9 @@ const dataSlice = createSlice({
     updateListBaoCao(state, action) {
       state.listBaoCao = action.payload;
     },
+    updateListKho(state, action) {
+      state.listKho = action.payload;
+    },
   },
 });
 
@@ -99,5 +103,6 @@ export const {
   updateListPhieuNhapSaving,
   updateListDonHang,
   updateListBaoCao,
+  updateListKho,
 } = dataSlice.actions;
 export default dataSlice.reducer;

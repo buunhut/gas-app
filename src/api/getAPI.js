@@ -5,6 +5,7 @@ import {
   updateListDanhMuc,
   updateListKhachHang,
   updateListKhachHangNo,
+  updateListKho,
   updateListLoaiVo,
   updateListNhaPhanPhoi,
   updateListNoNhaPhanPhoi,
@@ -168,6 +169,24 @@ export const getTraTien = async (headers, dispatch) => {
       const { statusCode, content } = res.data;
       if (statusCode === 200) {
         dispatch(updateListBaoCao(content));
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+export const getKho = async (headers, dispatch) => {
+  await axios({
+    method: "get",
+    url: `${API_URL}/kho`,
+    headers,
+  })
+    .then((res) => {
+      const { statusCode, content } = res.data;
+      // console.log(statusCode);
+      if (statusCode === 200) {
+        dispatch(updateListKho(content));
       }
     })
     .catch((err) => {
