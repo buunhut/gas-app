@@ -1,6 +1,6 @@
 @media screen and (max-width:576px) {
 
-    #banHang {
+    #nhapHang {
         .menu {
             position: absolute;
             top: 12px;
@@ -345,32 +345,101 @@
 
                 .sanPhamItem {
                     width: 240px;
-                    height: 240px;
+                    height: 148px;
                     border: 1px solid silver;
                     position: relative;
 
-                    img {
-                        height: 200px;
-                        width: 100%;
+                    .img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 110px;
+                        width: 110px;
+                        // border: 1px solid red;
+
+
+
                     }
 
+                    .xuatHang {
+                        position: absolute;
+                        top: 5px;
+                        right: 5px;
+                        left: 115px;
+                        z-index: 1;
+                        text-transform: capitalize;
+
+
+                        button {
+                            margin: 0 2px;
+                            border: 1px solid white;
+                            text-transform: capitalize;
+
+                        }
+                    }
 
                     .giaXuat {
-
-                        // height: 28px;
                         width: 50%;
+                        position: absolute;
+                        right: 5px;
+                        top: 45px;
 
                         input {
-                            height: 28px;
-                            border: none;
+                            height: 30px;
+                            border: 1px solid silver;
+                            border-radius: 5px;
                             outline: none;
                             font-size: 16px;
                             font-weight: bold;
                             width: 100%;
+                            text-align: right;
+                            transition: all .5s;
+
+                            &:focus {
+                                border: 1px solid orangered;
+                            }
 
 
                         }
                     }
+
+                    .tonKho {
+                        position: absolute;
+                        top: 82px;
+                        right: 5px;
+                        left: 115px;
+                        // width: 80px;
+                        z-index: 11;
+                        height: 30px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-end;
+                        padding: 0 8px;
+                        background-color: orange;
+                        color: white;
+                        font-size: 14px;
+                        font-weight: bold;
+                        border-radius: 0px 0 0 0px;
+
+                        p {
+                            text-align: right;
+                        }
+                    }
+
+                    h4.name {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        background-color: #009900;
+                        color: white;
+                        padding: 5px 10px;
+                        // margin-left: -13px;
+                        font-size: 16px;
+                        // border-radius: 0 15px 15px 0;
+                    }
+
+
 
 
                 }

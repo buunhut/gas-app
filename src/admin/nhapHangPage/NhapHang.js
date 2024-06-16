@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./banhang.scss";
+import "./nhaphang.scss";
 import { useDispatch, useSelector } from "react-redux";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Cần import CSS
 
@@ -163,7 +163,7 @@ const NhapHang = () => {
   }, [giaoDich, donHangId, length, headers, dispatch]);
 
   return (
-    <div id="banHang">
+    <div id="nhapHang">
       <MenuBar handleSelectMenu={handleSelectMenu} giaoDich={giaoDich} />
       <TimKiem
         postTimKiem={postTimKiemNhaPhanPhoi}

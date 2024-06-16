@@ -98,6 +98,7 @@ const SliderSanPham = ({ giaoDich, khachHangSelected, donHangSelected }) => {
                   <h4 className="name">{tenSanPham}</h4>
                   <div className="giaXuat">
                     <input
+                      className="focus"
                       type="text"
                       placeholder="Giá xuất"
                       onChange={(e) => handleChangeInputGia(e, sanPhamXuat)}
