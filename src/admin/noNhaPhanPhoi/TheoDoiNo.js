@@ -17,7 +17,7 @@ const TheoDoiNo = ({ listData, titlePage }) => {
       <div>
         <TimKiem
           postTimKiem={postTimKiemNoNhaPhanPhoi}
-          placeholder="Tìm khách hàng nợ..."
+          placeholder="Tìm nợ nhà phân phối..."
         />
         <div className="info">
           <div onClick={() => setIndexItem(-1)}>

@@ -1,173 +1,251 @@
-@media screen and (max-width:576px) {
+#banHang {
+    .menu {
+        position: absolute;
+        top: 12px;
+        right: 20px;
+        z-index: 1;
 
-    #banHang {
-        .menu {
-            position: absolute;
-            top: 12px;
-            right: 20px;
-            z-index: 1;
+        button {
+            margin: 0 2px;
+            border: 1px solid white;
 
-            button {
-                margin: 0 2px;
-                border: 1px solid white;
+        }
+    }
+
+
+    .khachHangContent {
+        margin-top: 5px;
+
+
+        .khachHangWrap {
+            margin-right: 10px;
+
+            &:first-child {
+                margin-left: 10px;
+            }
+
+            .khachHangItem {
+                width: 140px;
+                height: 50px;
+                border: 1px solid silver;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+
+                p {
+                    text-transform: capitalize
+                }
+
+                ;
+
 
             }
         }
+    }
+
+    .donHangContent {
+        min-height: 360px;
+        // background-color: white;
+        position: relative;
+        transition: all .5s ease-out;
 
 
-        .khachHangContent {
-            margin-top: 5px;
 
 
-            .khachHangWrap {
-                margin-right: 10px;
+        .donHangWrap {
 
-                &:first-child {
-                    margin-left: 10px;
-                }
+            padding: 10px 10px 10px 0;
 
-                .khachHangItem {
-                    width: 140px;
-                    height: 50px;
-                    border: 1px solid silver;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    flex-direction: column;
-
-                    p {
-                        text-transform: capitalize
-                    }
-
-                    ;
-
-
-                }
+            &:first-child {
+                padding-left: 10px;
             }
-        }
 
-        .donHangContent {
-            min-height: 360px;
-            // background-color: white;
-            position: relative;
-            transition: all .5s ease-out;
+            .donHangItem {
+                border: 1px solid transparent;
+                background-color: white;
+                width: 394px;
+                // margin: 20px auto;
+                padding: 10px;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                position: relative;
 
 
-
-
-            .donHangWrap {
-
-                padding: 10px 10px 10px 0;
-
-                &:first-child {
-                    padding-left: 10px;
+                h3 {
+                    position: absolute;
+                    top: -15px;
+                    right: 20px;
+                    background-color: orangered;
+                    color: white;
+                    padding: 5px 10px;
+                    text-transform: capitalize;
                 }
 
-                .donHangItem {
-                    border: 1px solid transparent;
-                    background-color: white;
-                    width: 394px;
-                    // margin: 20px auto;
-                    padding: 10px;
-                    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-                    position: relative;
+                span.ngay {
+                    display: block;
+                    font-size: 14px;
+                    color: silver;
+                    // margin: -5px 0 5px;
+                }
+
+                span.donHangId {
+                    display: block;
+                    font-size: 14px;
+                    color: black;
+                    // margin: -5px 0 5px;
+                }
 
 
-                    h3 {
-                        position: absolute;
-                        top: -15px;
-                        right: 20px;
-                        background-color: orangered;
-                        color: white;
-                        padding: 5px 10px;
-                        text-transform: capitalize;
-                    }
+                h4 {
+                    text-transform: capitalize;
+                }
 
-                    span.ngay {
-                        display: block;
-                        font-size: 14px;
-                        color: silver;
-                        // margin: -5px 0 5px;
-                    }
+                .mainContent {
+                    height: 300px;
+                    overflow-y: scroll;
 
-                    span.donHangId {
-                        display: block;
-                        font-size: 14px;
-                        color: black;
-                        // margin: -5px 0 5px;
+                    &::-webkit-scrollbar {
+                        display: none;
                     }
 
 
-                    h4 {
-                        text-transform: capitalize;
-                    }
-
-                    .mainContent {
-                        height: 300px;
-                        overflow-y: scroll;
-
-                        &::-webkit-scrollbar {
-                            display: none;
-                        }
 
 
+                    table {
+                        width: 100%;
+                        margin-top: 10px;
 
+                        border-collapse: collapse;
 
-                        table {
-                            width: 100%;
-                            margin-top: 10px;
+                        tbody {
 
-                            border-collapse: collapse;
+                            tr {
+                                td {
+                                    padding: 5px 3px;
+                                    border: 1px solid silver;
 
-                            tbody {
+                                    &.quatity {
+                                        width: 40px;
+                                    }
 
-                                tr {
-                                    td {
-                                        padding: 5px 3px;
-                                        border: 1px solid silver;
+                                    input.radio {
+                                        margin-left: 5px;
 
-                                        &.quatity {
-                                            width: 40px;
+                                    }
+
+                                    input.note {
+                                        width: 100%;
+                                        height: 28px;
+                                        padding: 0 5px;
+                                        border: none;
+                                        outline: none;
+                                        text-align: right;
+                                    }
+
+                                    &.vo {
+                                        width: 60px;
+
+                                        p {
+                                            text-align: right;
+                                        }
+                                    }
+
+                                    &.money {
+                                        width: 100px;
+                                        text-align: right;
+                                        padding: 5px 0px;
+
+                                        p {
+                                            // padding-right: 1px;
+                                            font-size: 16px;
+                                            padding-right: 5px;
                                         }
 
-                                        input.radio {
-                                            margin-left: 5px;
-
-                                        }
-
-                                        input.note {
-                                            width: 100%;
-                                            height: 28px;
+                                        input.traTien {
+                                            width: 100px;
+                                            height: 30px;
+                                            text-align: right;
                                             padding: 0 5px;
+                                            font-size: 16px;
                                             border: none;
                                             outline: none;
-                                            text-align: right;
+                                            font-family: "Roboto", sans-serif;
+
+
+
                                         }
 
-                                        &.vo {
-                                            width: 60px;
+                                    }
 
-                                            p {
-                                                text-align: right;
+                                    label {
+                                        margin: 0 5px;
+                                    }
+
+                                    .traVoDropDown {
+                                        position: relative;
+                                        padding: 3px;
+                                        height: 28px;
+
+                                        border: 1px solid #c0c0c0;
+                                        border-radius: 5px;
+                                        background-color: white;
+
+
+                                        ul.vo {
+                                            position: absolute;
+                                            top: 28px;
+                                            z-index: 4;
+                                            right: 0;
+                                            // width: 90px;
+                                            height: 0px;
+                                            overflow: hidden;
+                                            transition: all .3s;
+                                            background-color: #f2f2f2;
+                                            border-radius: 5px;
+
+                                            li {
+                                                margin: 10px;
+                                                list-style: none;
+
+                                                &:hover {
+                                                    background-color: #009900;
+                                                    color: white;
+                                                }
                                             }
                                         }
+                                    }
+                                }
 
-                                        &.money {
-                                            width: 100px;
-                                            text-align: right;
-                                            padding: 5px 0px;
+                                &.traTien {
+                                    td {
+                                        span.tra {
+                                            color: silver;
+                                            font-size: 14px;
+                                            font-weight: 500;
+                                        }
+                                    }
 
-                                            p {
-                                                // padding-right: 1px;
-                                                font-size: 16px;
-                                                padding-right: 5px;
-                                            }
 
-                                            input.traTien {
-                                                width: 100px;
+                                }
+
+                                &.traVo {
+
+                                    td {
+                                        span.tra {
+                                            color: silver;
+                                        }
+
+                                        .traVoItem {
+                                            border: 1px solid silver;
+
+                                            padding: 0 5px;
+                                            height: 32px;
+
+                                            input.traVo {
+                                                width: 30px;
                                                 height: 30px;
                                                 text-align: right;
-                                                padding: 0 5px;
+                                                padding: 0 3px;
                                                 font-size: 16px;
                                                 border: none;
                                                 outline: none;
@@ -176,259 +254,178 @@
 
 
                                             }
-
                                         }
 
-                                        label {
-                                            margin: 0 5px;
-                                        }
-
-                                        .traVoDropDown {
-                                            position: relative;
-                                            padding: 3px;
-                                            height: 28px;
-
-                                            border: 1px solid #c0c0c0;
-                                            border-radius: 5px;
-                                            background-color: white;
-
-
-                                            ul.vo {
-                                                position: absolute;
-                                                top: 28px;
-                                                z-index: 4;
-                                                right: 0;
-                                                // width: 90px;
-                                                height: 0px;
-                                                overflow: hidden;
-                                                transition: all .3s;
-                                                background-color: #f2f2f2;
-                                                border-radius: 5px;
-
-                                                li {
-                                                    margin: 10px;
-                                                    list-style: none;
-
-                                                    &:hover {
-                                                        background-color: #009900;
-                                                        color: white;
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-
-                                    &.traTien {
-                                        td {
-                                            span.tra {
-                                                color: silver;
-                                                font-size: 14px;
-                                                font-weight: 500;
-                                            }
-                                        }
-
-
-                                    }
-
-                                    &.traVo {
-
-                                        td {
-                                            span.tra {
-                                                color: silver;
-                                            }
-
-                                            .traVoItem {
-                                                border: 1px solid silver;
-
-                                                padding: 0 5px;
-                                                height: 32px;
-
-                                                input.traVo {
-                                                    width: 30px;
-                                                    height: 30px;
-                                                    text-align: right;
-                                                    padding: 0 3px;
-                                                    font-size: 16px;
-                                                    border: none;
-                                                    outline: none;
-                                                    font-family: "Roboto", sans-serif;
-
-
-
-                                                }
-                                            }
-
-                                        }
                                     }
                                 }
-
                             }
-                        }
-
-                        .ghiChu {
-                            width: 100%;
-                            margin-top: 5px;
-
-
-                            input {
-                                width: 100%;
-                                height: 32px;
-                                // border: 1px solid silver;
-                                border-bottom: 1px solid silver;
-
-                                padding: 0 3px;
-                                text-align: right;
-
-                                &:focus {
-                                    border-radius: 5px;
-
-
-                                }
-                            }
-                        }
-                    }
-
-
-                }
-
-            }
-
-            span.numberOfPhieu {
-                position: absolute;
-                left: 50%;
-                bottom: 20px;
-                transform: translateX(-50%);
-                font-size: 10px;
-                color: silver;
-
-            }
-
-
-
-
-
-
-
-
-
-
-
-
-
-        }
-
-        .sanPhamContent {
-
-
-            .sanPhamWrap {
-                margin-right: 10px;
-
-                &:first-child {
-                    margin-left: 10px;
-                }
-
-                .sanPhamItem {
-                    width: 240px;
-                    height: 148px;
-                    border: 1px solid silver;
-                    position: relative;
-
-                    .img {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        height: 110px;
-                        width: 110px;
-                        // border: 1px solid red;
-
-
-
-                    }
-
-                    .xuatHang {
-                        position: absolute;
-                        top: 5px;
-                        right: 5px;
-                        left: 115px;
-                        z-index: 1;
-                        text-transform: capitalize;
-
-
-                        button {
-                            margin: 0 2px;
-                            border: 1px solid white;
-                            text-transform: capitalize;
 
                         }
                     }
 
-                    .giaXuat {
-                        width: 50%;
-                        position: absolute;
-                        right: 5px;
-                        top: 45px;
+                    .ghiChu {
+                        width: 100%;
+                        margin-top: 5px;
+
 
                         input {
-                            height: 30px;
-                            border: 1px solid silver;
-                            border-radius: 5px;
-                            outline: none;
-                            font-size: 16px;
-                            font-weight: bold;
                             width: 100%;
+                            height: 32px;
+                            // border: 1px solid silver;
+                            border-bottom: 1px solid silver;
+
+                            padding: 0 3px;
                             text-align: right;
-                            transition: all .5s;
 
                             &:focus {
-                                border: 1px solid orangered;
+                                border-radius: 5px;
+
+
                             }
-
-
                         }
                     }
+                }
 
-                    .tonKho {
-                        position: absolute;
-                        top: 82px;
-                        right: 5px;
-                        left: 115px;
-                        // width: 80px;
-                        z-index: 11;
-                        height: 30px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: flex-end;
-                        padding: 0 8px;
-                        background-color: orange;
-                        color: white;
-                        font-size: 14px;
-                        font-weight: bold;
-                        border-radius: 0px 0 0 0px;
 
-                        p {
-                            text-align: right;
-                        }
-                    }
+            }
 
-                    h4.name {
-                        position: absolute;
-                        bottom: 0;
-                        left: 0;
-                        right: 0;
-                        background-color: #009900;
-                        color: white;
-                        padding: 5px 10px;
-                        // margin-left: -13px;
-                        font-size: 16px;
-                        // border-radius: 0 15px 15px 0;
-                    }
+        }
 
+        span.numberOfPhieu {
+            position: absolute;
+            left: 50%;
+            bottom: 20px;
+            transform: translateX(-50%);
+            font-size: 10px;
+            color: silver;
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+    .sanPhamContent {
+
+
+        .sanPhamWrap {
+            margin-right: 10px;
+
+            &:first-child {
+                margin-left: 10px;
+            }
+
+            .sanPhamItem {
+                width: 240px;
+                height: 148px;
+                border: 1px solid silver;
+                position: relative;
+
+                .img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 110px;
+                    width: 110px;
+                    // border: 1px solid red;
 
 
 
                 }
+
+                .xuatHang {
+                    position: absolute;
+                    top: 5px;
+                    right: 5px;
+                    left: 115px;
+                    z-index: 1;
+                    text-transform: capitalize;
+
+
+                    button {
+                        margin: 0 2px;
+                        border: 1px solid white;
+                        text-transform: capitalize;
+
+                    }
+                }
+
+                .giaXuat {
+                    width: 50%;
+                    position: absolute;
+                    right: 5px;
+                    top: 45px;
+
+                    input {
+                        height: 30px;
+                        border: 1px solid silver;
+                        border-radius: 5px;
+                        outline: none;
+                        font-size: 16px;
+                        font-weight: bold;
+                        width: 100%;
+                        text-align: right;
+                        transition: all .5s;
+
+                        &:focus {
+                            border: 1px solid orangered;
+                        }
+
+
+                    }
+                }
+
+                .tonKho {
+                    position: absolute;
+                    top: 82px;
+                    right: 5px;
+                    left: 115px;
+                    // width: 80px;
+                    z-index: 11;
+                    height: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    padding: 0 8px;
+                    background-color: orange;
+                    color: white;
+                    font-size: 14px;
+                    font-weight: bold;
+                    border-radius: 0px 0 0 0px;
+
+                    p {
+                        text-align: right;
+                    }
+                }
+
+                h4.name {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background-color: #009900;
+                    color: white;
+                    padding: 5px 10px;
+                    // margin-left: -13px;
+                    font-size: 16px;
+                    // border-radius: 0 15px 15px 0;
+                }
+
+
+
+
             }
         }
-
     }
+
 }
