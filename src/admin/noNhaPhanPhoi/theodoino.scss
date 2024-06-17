@@ -35,13 +35,24 @@
             }
 
             h3 {
-                color: #009900;
+                color: orangered;
                 text-align: center;
                 font-size: 18px;
+
+                &.user {
+                    span {
+                        color: #009900;
+
+
+                    }
+
+                }
 
 
                 span {
                     font-size: 18px;
+                    color: orangered;
+
                 }
 
             }
@@ -57,8 +68,8 @@
             .noItemWrap {
                 width: 394px;
                 overflow: hidden;
-                border: 1px solid silver;
-                border-radius: 8px;
+                border: 1px solid transparent;
+                // border-radius: 8px;
                 margin-bottom: 15px;
                 padding: 10px;
                 font-size: 16px;

@@ -24,7 +24,7 @@ const TheoDoiNo = ({ listData, titlePage }) => {
             <p>
               <i className="fa-solid fa-users"></i>
             </p>
-            <h3>
+            <h3 className="user">
               <CountUp end={listData.length} duration={1} separator="," />
             </h3>
           </div>

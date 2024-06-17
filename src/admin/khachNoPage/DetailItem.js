@@ -35,7 +35,7 @@ const DetailItem = ({ item, tenDoiTac, showId, setShowId }) => {
           <p className="vo title">Nợ vỏ</p>
           <p
             className="vo bold"
-            style={{ color: tongNoVo !== 0 ? "red" : "black" }}
+            style={{ color: tongNoVo !== 0 ? "red" : "silver" }}
           >
             {tongNoVo?.toLocaleString()}
           </p>
@@ -44,7 +44,7 @@ const DetailItem = ({ item, tenDoiTac, showId, setShowId }) => {
           <p className="right title">Nợ tiền</p>
           <p
             className="right bold"
-            style={{ color: tongNoTien !== 0 ? "red" : "black" }}
+            style={{ color: tongNoTien !== 0 ? "red" : "silver" }}
           >
             {tongNoTien?.toLocaleString()}
           </p>

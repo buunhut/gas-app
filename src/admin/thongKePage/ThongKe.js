@@ -157,12 +157,19 @@ const ThongKe = () => {
             </div>
 
             <div>
-              <p>Nợ tiền</p>
-              <CountUp end={tongNoTien} duration={1} separator="," />
+              <p>
+                <i className="fa-solid fa-fire-flame-simple"></i>
+              </p>
+              <h3>
+                <CountUp end={tongNoVo} duration={1} separator="," />
+              </h3>
             </div>
+
             <div>
-              <p>Nợ vỏ</p>
-              <CountUp end={tongNoVo} duration={1} separator="," />
+              <p>
+                <i className="fa-solid fa-file-invoice-dollar"></i>
+              </p>
+              <CountUp end={tongNoTien} duration={1} separator="," />
             </div>
           </div>
         )}

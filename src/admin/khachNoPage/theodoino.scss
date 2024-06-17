@@ -57,8 +57,8 @@
             .noItemWrap {
                 width: 394px;
                 overflow: hidden;
-                border: 1px solid silver;
-                border-radius: 8px;
+                border: 1px solid transparent;
+                // border-radius: 8px;
                 margin-bottom: 15px;
                 padding: 10px;
                 font-size: 16px;
@@ -102,9 +102,9 @@
                         }
 
                         p.title {
-                            // color: silver;
+                            color: silver;
                             font-size: 14px;
-                            font-weight: 500;
+                            font-weight: 600;
                             margin-bottom: 5px;
 
                         }
