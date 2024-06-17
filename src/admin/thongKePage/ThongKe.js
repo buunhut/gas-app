@@ -11,8 +11,10 @@ import {
 } from "../../api/getAPI";
 import CountUp from "react-countup";
 import moment from "moment";
+import { useNavigate } from "react-router-dom";
 const ThongKe = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const {
     headers,
     listBaoCao,
@@ -90,7 +92,6 @@ const ThongKe = () => {
         </div>
 
         <div className="sumAll">
-          {/* <p>Cộng 3 mục:</p> */}
           <i className="fa-solid fa-fire-flame-simple"></i>
           <CountUp
             end={tongNoVo + tongBinhNguyen + tongVoKhong}
@@ -110,7 +111,6 @@ const ThongKe = () => {
 
               <div>
                 <p>Tổng thu</p>
-                {/* <span>{listBaoCao?.tongThuTien.toLocaleString()} đ</span> */}
                 <CountUp
                   end={listBaoCao?.tongThuTien}
                   duration={1}
@@ -119,7 +119,6 @@ const ThongKe = () => {
               </div>
               <div>
                 <p>Tổng chi</p>
-                {/* <span> {listBaoCao?.tongChiTien.toLocaleString()} đ</span> */}
                 <CountUp
                   end={listBaoCao?.tongChiTien}
                   duration={1}
@@ -132,7 +131,6 @@ const ThongKe = () => {
                 }}
               >
                 <p>Số dư</p>
-                {/* <span> {listBaoCao?.tongTienTrongNgay.toLocaleString()} đ</span> */}
                 <CountUp
                   end={listBaoCao?.tongTienTrongNgay}
                   duration={1}
@@ -148,14 +146,14 @@ const ThongKe = () => {
             className="baoCaoTienItem"
             style={{ justifyContent: "space-around" }}
           >
-            <div className="title">
+            <div
+              className="title"
+              onClick={() => {
+                navigate("theo-doi-no");
+              }}
+            >
               <h5>Khách nợ </h5>
             </div>
-            {/* <div>
-              <div>Khách nợ:</div>
-              <h4>{listKhachHangNo.length}</h4>
-            </div> */}
-
             <div>
               <p>Nợ vỏ</p>
               <CountUp end={tongNoVo} duration={1} separator="," />
