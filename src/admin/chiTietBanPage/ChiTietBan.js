@@ -67,6 +67,8 @@ const ChiTietBan = () => {
   //   handleSortPhieu(sort, headers, dispatch);
   // }, [sort]);
 
+  const [phieuNoOnly, setPhieuNoOnly] = useState(false);
+
   return (
     <div className="chiTietBan">
       <h3 className="tac mt10">Chi tiết xuất hàng</h3>
@@ -102,9 +104,19 @@ const ChiTietBan = () => {
       </div>
       {listPhieuXuatSaving.length > 0 ? (
         <>
-          <ChiTietInfo listPhieuXuatSaving={listPhieuXuatSaving} />
+          <ChiTietInfo
+            listPhieuXuatSaving={listPhieuXuatSaving}
+            setPhieuNoOnly={setPhieuNoOnly}
+          />
           {listPhieuXuatSaving?.map((phieu, index) => {
-            return <ChiTietItem phieu={phieu} key={index} sort={sort} />;
+            if (phieuNoOnly === true) {
+              const { tongNoTien, tongNoVo } = phieu;
+              if (tongNoTien !== 0 || tongNoVo !== 0) {
+                return <ChiTietItem phieu={phieu} key={index} sort={sort} />;
+              }
+            } else {
+              return <ChiTietItem phieu={phieu} key={index} sort={sort} />;
+            }
           })}
         </>
       ) : (

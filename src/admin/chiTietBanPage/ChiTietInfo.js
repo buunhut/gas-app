@@ -1,6 +1,6 @@
 import React from "react";
 
-const ChiTietInfo = ({ listPhieuXuatSaving }) => {
+const ChiTietInfo = ({ listPhieuXuatSaving, setPhieuNoOnly }) => {
   const soLuongPhieu = listPhieuXuatSaving.length;
   const tongTienCacPhieu = listPhieuXuatSaving.reduce(
     (total, item) => total + item.tongTien,
@@ -32,9 +32,11 @@ const ChiTietInfo = ({ listPhieuXuatSaving }) => {
           <span>
             <i className="fa-solid fa-file-invoice-dollar"></i>
           </span>
-          <p>{tongTienCacPhieu.toLocaleString()} đ</p>
+          <p onClick={() => setPhieuNoOnly(false)}>
+            {tongTienCacPhieu.toLocaleString()} đ
+          </p>
           <p className="tra">{tongTienDaTraCacPhieu.toLocaleString()} đ</p>
-          <p className="no">
+          <p className="no" onClick={() => setPhieuNoOnly(true)}>
             {(tongTienCacPhieu - tongTienDaTraCacPhieu).toLocaleString()} đ
           </p>
         </div>
@@ -42,9 +44,13 @@ const ChiTietInfo = ({ listPhieuXuatSaving }) => {
           <span>
             <i className="fa-solid fa-fire-flame-simple"></i>
           </span>
-          <p>{tongVoCacPhieu.toLocaleString()} vỏ</p>
+          <p onClick={() => setPhieuNoOnly(false)}>
+            {tongVoCacPhieu.toLocaleString()} vỏ
+          </p>
           <p className="tra">{tongTraVoCacPhieu.toLocaleString()} vỏ</p>
-          <p className="no">{tongNoTraVoCacPhieu.toLocaleString()} vỏ</p>
+          <p className="no" onClick={() => setPhieuNoOnly(true)}>
+            {tongNoTraVoCacPhieu.toLocaleString()} vỏ
+          </p>
         </div>
       </div>
     </div>
