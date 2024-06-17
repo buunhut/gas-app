@@ -143,7 +143,7 @@ const ThongKe = () => {
 
         {(tongNoTien !== 0 || tongNoVo !== 0) && (
           <div
-            className="baoCaoTienItem"
+            className="baoCaoItem"
             style={{ justifyContent: "space-around" }}
           >
             <div
@@ -157,13 +157,10 @@ const ThongKe = () => {
             <div>
               <p>Nợ vỏ</p>
               <CountUp end={tongNoVo} duration={1} separator="," />
-              {/* <h4>{tongNoVo?.toLocaleString()}</h4> */}
             </div>
             <div>
               <p>Nợ tiền</p>
               <CountUp end={tongNoTien} duration={1} separator="," />
-
-              {/* <h4>{tongNoTien?.toLocaleString()}</h4> */}
             </div>
           </div>
         )}

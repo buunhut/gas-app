@@ -31,8 +31,9 @@
             position: absolute;
             top: 56px;
             right: 10px;
-            height: 50px;
-            width: 50px;
+            height: 60px;
+            width: 60px;
+
 
             background-color: #009900;
             border-radius: 50%;
@@ -42,7 +43,7 @@
             }
 
             span {
-                font-size: 18px;
+                font-size: 20px;
                 font-weight: bold;
                 color: white;
             }
@@ -97,10 +98,59 @@
                 }
 
                 span {
-                    // display: block;
-                    // width: 100px;
                     text-align: right;
-                    // color: #009900;
+                    // color: orangered;
+                    font-size: 20px;
+                    font-weight: bold;
+
+                }
+            }
+
+
+        }
+
+        .baoCaoItem {
+            margin-top: 20px;
+            padding: 22px 10px 10px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+
+            .title {
+                display: inline-block;
+                background-color: #009900;
+                color: white;
+                // border-radius: 0 15px 15px 0;
+                position: absolute;
+                top: -12px;
+                left: -10px;
+                padding: 5px 10px;
+
+                h5 {
+                    font-size: 16px;
+                    font-weight: 500;
+                }
+
+            }
+
+
+            div {
+                color: #009900;
+
+                p {
+                    margin: 0;
+                    color: silver;
+                    font-size: 14px;
+                    font-weight: 500;
+
+
+                }
+
+                span {
+                    text-align: right;
+                    color: orangered;
                     font-size: 20px;
                     font-weight: bold;
 
