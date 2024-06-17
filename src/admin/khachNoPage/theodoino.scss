@@ -90,6 +90,7 @@
                             text-align: right;
                             width: 120px;
                             padding-right: 3px;
+
                         }
 
 
@@ -104,6 +105,8 @@
                             // color: silver;
                             font-size: 14px;
                             font-weight: 500;
+                            margin-bottom: 5px;
+
                         }
 
 
@@ -228,6 +231,10 @@
 
 
 
+        }
+
+        .traNoTool {
+            border-bottom: none;
         }
     }
 }
