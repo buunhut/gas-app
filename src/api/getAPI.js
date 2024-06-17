@@ -1,6 +1,7 @@
 import axios from "axios";
 import { API_URL } from "../user/DangNhap";
 import {
+  updateIsLoading,
   updateListBaoCao,
   updateListDanhMuc,
   updateListKhachHang,
@@ -177,19 +178,21 @@ export const getTraTien = async (headers, dispatch) => {
 };
 
 export const getKho = async (headers, dispatch) => {
-  await axios({
-    method: "get",
-    url: `${API_URL}/kho`,
-    headers,
-  })
-    .then((res) => {
-      const { statusCode, content } = res.data;
-      // console.log(statusCode);
-      if (statusCode === 200) {
-        dispatch(updateListKho(content));
-      }
-    })
-    .catch((err) => {
-      console.log(err);
+  try {
+    dispatch(updateIsLoading(true));
+    const res = await axios({
+      method: "get",
+      url: `${API_URL}/kho`,
+      headers,
     });
+    const { statusCode, content } = res.data;
+    // console.log(statusCode);
+    if (statusCode === 200) {
+      dispatch(updateListKho(content));
+    }
+  } catch (error) {
+    console.log(error);
+  } finally {
+    dispatch(updateIsLoading(false));
+  }
 };

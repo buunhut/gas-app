@@ -67,6 +67,7 @@ const HeaderComponent = () => {
                 lockScroll();
               }}
             >
+              <i className="fa-solid fa-fire"></i>
               Sản phẩm
             </li>
             <li
@@ -76,6 +77,7 @@ const HeaderComponent = () => {
                 lockScroll();
               }}
             >
+              <i className="fa-solid fa-file-circle-minus"></i>
               Xuất hàng
             </li>
             <li
@@ -85,6 +87,7 @@ const HeaderComponent = () => {
                 lockScroll();
               }}
             >
+              <i className="fa-solid fa-file-signature"></i>
               Chi tiết xuất
             </li>
             <li
@@ -94,6 +97,7 @@ const HeaderComponent = () => {
                 lockScroll();
               }}
             >
+              <i className="fa-solid fa-circle-dollar-to-slot"></i>
               Theo dõi khách nợ
             </li>
             <li
@@ -103,6 +107,7 @@ const HeaderComponent = () => {
                 lockScroll();
               }}
             >
+              <i className="fa-solid fa-user-group"></i>
               Danh sách khách hàng
             </li>
             <li
@@ -112,6 +117,7 @@ const HeaderComponent = () => {
                 lockScroll();
               }}
             >
+              <i className="fa-solid fa-file-circle-plus"></i>
               Nhập hàng
             </li>
             <li
@@ -121,6 +127,7 @@ const HeaderComponent = () => {
                 lockScroll();
               }}
             >
+              <i className="fa-solid fa-file-signature"></i>
               Chi tiết nhập
             </li>
 
@@ -131,6 +138,7 @@ const HeaderComponent = () => {
                 lockScroll();
               }}
             >
+              <i className="fa-solid fa-circle-dollar-to-slot"></i>
               Nợ nhà phân phối
             </li>
             <li
@@ -140,6 +148,7 @@ const HeaderComponent = () => {
                 lockScroll();
               }}
             >
+              <i className="fa-solid fa-user-group"></i>
               Danh sách nhà phân phối
             </li>
           </ul>

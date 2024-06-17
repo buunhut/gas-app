@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Outlet, useNavigate } from "react-router-dom";
 import "./adminpage.scss";
 import HeaderComponent from "./component/HeaderComponent";
 import FooterComponent from "./component/FooterComponent";
 import { updateUser } from "../redux/dataSlice";
+import LottieAnimation from "./component/LottieAnimation";
 
 //đọc text
 export const speak = (text) => {
@@ -27,7 +28,7 @@ export const getRemainingString = (str, num) => {
 };
 
 const AdminPage = () => {
-  const { user, isLoading } = useSelector((state) => state.dataSlice);
+  const { user } = useSelector((state) => state.dataSlice);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();

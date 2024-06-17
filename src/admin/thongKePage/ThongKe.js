@@ -23,6 +23,7 @@ const ThongKe = () => {
     listKhachHangNo,
     listKho,
   } = useSelector((state) => state.dataSlice);
+
   const fetchData = async () => {
     await getTraTien(headers, dispatch);
     await getLoaiVo(headers, dispatch);
