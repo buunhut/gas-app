@@ -129,7 +129,7 @@ const PhieuContent = ({ item, toShow, sort }) => {
   };
 
   return (
-    <div style={{ marginTop: "10px", fontSize: "16px", fontWeight: 600 }}>
+    <div style={{ marginTop: "10px", fontSize: "16px", fontWeight: 500 }}>
       {listChiTiet?.map((chiTiet, index) => {
         const { tenSanPham, soLuong, donGia, chiTietId } = chiTiet;
         return (

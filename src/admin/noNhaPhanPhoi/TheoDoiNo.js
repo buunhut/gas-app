@@ -24,7 +24,6 @@ const TheoDoiNo = ({ listData, titlePage }) => {
             <p>
               <i className="fa-solid fa-users"></i>
             </p>
-            {/* <h3>{listData.length}</h3> */}
             <h3>
               <CountUp end={listData.length} duration={1} separator="," />
             </h3>
@@ -34,7 +33,6 @@ const TheoDoiNo = ({ listData, titlePage }) => {
             <p>
               <i className="fa-solid fa-file-invoice-dollar"></i>
             </p>
-            {/* <h3>{tongTien?.toLocaleString()} đ</h3> */}
             <h3>
               <CountUp end={tongTien} duration={1} separator="," /> đ
             </h3>
@@ -43,7 +41,6 @@ const TheoDoiNo = ({ listData, titlePage }) => {
             <p>
               <i className="fa-solid fa-fire-flame-simple"></i>
             </p>
-            {/* <h3>{tongVo?.toLocaleString()} vỏ</h3> */}
             <h3>
               <CountUp end={tongVo} duration={1} separator="," /> vỏ
             </h3>
