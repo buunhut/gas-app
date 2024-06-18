@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import NhaPhanPhoiItem from "./NhaPhanPhoiItem";
 import { postNhaPhanPhoi, postTimKiemNhaPhanPhoi } from "../../api/postAPI";
@@ -14,9 +14,11 @@ const NhaPhanPhoi = () => {
     postNhaPhanPhoi(headers, dispatch);
   };
 
+  const [keyword, setKeyword] = useState("");
+
   const handleTimNhaPhanPhoi = (e, headers, dispatch) => {
-    const keyword = e.target.value.trim();
-    const data = { keyword };
+    setKeyword(e.target.value);
+    const data = { keyword: e.target.value.trim() };
     postTimKiemNhaPhanPhoi(data, headers, dispatch);
   };
 
@@ -38,6 +40,7 @@ const NhaPhanPhoi = () => {
             className="timKiem"
             type="text"
             placeholder="Tìm nhà phân phối..."
+            value={keyword}
             onChange={(e) => handleTimNhaPhanPhoi(e, headers, dispatch)}
           />
         </div>

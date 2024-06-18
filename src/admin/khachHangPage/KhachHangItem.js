@@ -9,20 +9,19 @@ const KhachHangItem = ({ item }) => {
   const dispatch = useDispatch();
   const { headers } = useSelector((state) => state.dataSlice);
 
+  // console.log(item);
+
   const { doiTacId, tenDoiTac, diaChiDoiTac, soDienThoaiDoiTac, viTri } = item;
-  const doiTac = {
-    doiTacId,
-    tenDoiTac,
-    diaChiDoiTac,
-    soDienThoaiDoiTac,
-    viTri,
-  };
 
   const [doiTacSelected, setDoiTacSelected] = useState(null);
   const handleChangeInput = (e, item) => {
     const { name, value } = e.target;
     setDoiTacSelected({
-      ...doiTac,
+      doiTacId,
+      soDienThoaiDoiTac,
+      tenDoiTac,
+      diaChiDoiTac,
+      viTri,
       [name]: name === "soDienThoaiDoiTac" ? value.replace(/\D/g, "") : value,
     });
   };
@@ -93,7 +92,6 @@ const KhachHangItem = ({ item }) => {
                 ? ""
                 : soDienThoaiDoiTac
             }
-            // onClick={() => handleClickKhachHang(item)}
             onChange={(e) => handleChangeInput(e, item)}
             onBlur={handleSuaKhachHang}
           />
@@ -114,7 +112,6 @@ const KhachHangItem = ({ item }) => {
                 ? ""
                 : diaChiDoiTac
             }
-            // onClick={() => handleClickKhachHang(item)}
             onChange={(e) => handleChangeInput(e, item)}
             onBlur={handleSuaKhachHang}
           />
@@ -136,7 +133,6 @@ const KhachHangItem = ({ item }) => {
                   ? ""
                   : viTri
               }
-              // onClick={() => handleClickKhachHang(item)}
               onChange={(e) => handleChangeInput(e, item)}
               onBlur={handleSuaKhachHang}
             />

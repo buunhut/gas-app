@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./theodoino.scss";
-import TimKiem from "../khachHangPage/TimKiem";
 import ListDoiTacNo from "./ListDoiTacNo";
 import { postTimKiemNoNhaPhanPhoi } from "../../api/postAPI";
 import CountUp from "react-countup";
+import TimKiem from "../component/TimKiem";
 
 const TheoDoiNo = ({ listData, titlePage }) => {
   const tongTien = listData.reduce((total, item) => total + item.tongTienNo, 0);

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import KhachHangItem from "./KhachHangItem";
 import { postKhachHang, postTimKiemKhachHang } from "../../api/postAPI";
@@ -6,10 +6,7 @@ import { getKhachHang } from "../../api/getAPI";
 
 const KhachHang = () => {
   const dispatch = useDispatch();
-  const { headers, listKhachHang } = useSelector(
-    (state) => state.dataSlice
-  );
-
+  const { headers, listKhachHang } = useSelector((state) => state.dataSlice);
 
   const soLuongKhachHang = listKhachHang.length;
 
@@ -17,9 +14,11 @@ const KhachHang = () => {
     postKhachHang(headers, dispatch);
   };
 
+  const [keyword, setKeyword] = useState("");
+
   const handleTimKhachHang = (e, headers, dispatch) => {
-    const keyword = e.target.value.trim();
-    const data = { keyword };
+    setKeyword(e.target.value);
+    const data = { keyword: e.target.value.trim() };
     postTimKiemKhachHang(data, headers, dispatch);
   };
 
@@ -41,6 +40,7 @@ const KhachHang = () => {
             className="timKiem"
             type="text"
             placeholder="Tìm khách hàng..."
+            value={keyword}
             onChange={(e) => handleTimKhachHang(e, headers, dispatch)}
           />
         </div>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./theodoino.scss";
 import ListDoiTacNo from "./ListDoiTacNo";
-import TimKiem from "../khachHangPage/TimKiem";
+import TimKiem from "../component/TimKiem";
 import { postTimKiemKhachHangNo } from "../../api/postAPI";
 import CountUp from "react-countup";
 

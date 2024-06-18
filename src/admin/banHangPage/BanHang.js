@@ -16,7 +16,7 @@ import { postTaoPhieu, postTimKiemKhachHang } from "../../api/postAPI";
 import DoiTac from "./DoiTac";
 import BanHangMenuBar from "./MenuBar";
 import { speak } from "../AdminPage";
-import TimKiem from "../khachHangPage/TimKiem";
+import TimKiem from "../component/TimKiem";
 import { updateIsLoading } from "../../redux/dataSlice";
 import SliderSanPham from "./SliderSanPham";
 import SliderVo from "./SliderVo";

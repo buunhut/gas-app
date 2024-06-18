@@ -30,10 +30,10 @@ const ThongKe = () => {
     await getDanhMuc(headers, dispatch);
     await getKhachHangNo(headers, dispatch);
     //demo get kho api
-    // await getKho(headers, dispatch);
+    await getKho(headers, dispatch);
   };
 
-  // console.log("báo cáo", listKho);
+  console.log("báo cáo", listKho);
 
   const tongNoTien = listKhachHangNo.reduce(
     (total, item) => total + item.tongTienNo,
@@ -110,7 +110,7 @@ const ThongKe = () => {
                 <h5>Tiền mặt</h5>
               </div>
 
-              <div>
+              <div onClick={() => navigate("chi-tiet-xuat")}>
                 <p>Tổng thu</p>
                 <CountUp
                   end={listBaoCao?.tongThuTien}
@@ -118,7 +118,7 @@ const ThongKe = () => {
                   separator=","
                 />
               </div>
-              <div>
+              <div onClick={() => navigate("chi-tiet-nhap")}>
                 <p>Tổng chi</p>
                 <CountUp
                   end={listBaoCao?.tongChiTien}

@@ -14,12 +14,12 @@ import {
 } from "../../api/getAPI";
 import { postTaoPhieu, postTimKiemNhaPhanPhoi } from "../../api/postAPI";
 import { speak } from "../AdminPage";
-import TimKiem from "../khachHangPage/TimKiem";
 import { updateIsLoading } from "../../redux/dataSlice";
 import MenuBar from "./MenuBar";
 import DoiTac from "./DoiTac";
 import SliderSanPham from "./SliderSanPham";
 import SliderVo from "./SliderVo";
+import TimKiem from "../component/TimKiem";
 
 const NhapHang = () => {
   const dispatch = useDispatch();

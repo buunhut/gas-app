@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./timkiem.scss";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -6,9 +6,11 @@ const TimKiem = ({ postTimKiem, placeholder }) => {
   const dispatch = useDispatch();
   const { headers } = useSelector((state) => state.dataSlice);
 
+  const [keyword, setKeyword] = useState("");
+
   const handleTimKiem = (e) => {
-    const keyword = e.target.value.trim();
-    const data = { keyword };
+    setKeyword(e.target.value);
+    const data = { keyword: e.target.value.trim() };
     postTimKiem(data, headers, dispatch);
   };
 
@@ -16,7 +18,12 @@ const TimKiem = ({ postTimKiem, placeholder }) => {
     <div className="timKiemWrap">
       <div className="timKiem">
         <i className="fa-solid fa-magnifying-glass"></i>
-        <input type="text" placeholder={placeholder} onChange={handleTimKiem} />
+        <input
+          type="text"
+          value={keyword || ""}
+          placeholder={placeholder}
+          onChange={handleTimKiem}
+        />
       </div>
     </div>
   );
