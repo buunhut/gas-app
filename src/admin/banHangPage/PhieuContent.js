@@ -294,7 +294,7 @@ const PhieuContent = ({ item, toShow, sort }) => {
               <div>
                 <input
                   className="focus"
-                  style={{ textAlign: "right" }}
+                  style={{ textAlign: "right", width: "120px" }}
                   type="text"
                   value={
                     editSoTienTra?.[traTienId] !== undefined
