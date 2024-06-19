@@ -16,6 +16,7 @@ const initialState = {
   listPhieuNhapPending: [],
   listPhieuXuatSaving: [],
   listPhieuNhapSaving: [],
+  listKhachTraNo: [],
   listDonHang: [],
   listBaoCao: null,
   listKho: [],
@@ -69,7 +70,8 @@ const dataSlice = createSlice({
       state.listPhieuNhapPending = action.payload;
     },
     updateListPhieuXuatSaving(state, action) {
-      state.listPhieuXuatSaving = action.payload;
+      state.listPhieuXuatSaving = action.payload.res;
+      state.listKhachTraNo = action.payload.listKhachTraNo;
     },
     updateListPhieuNhapSaving(state, action) {
       state.listPhieuNhapSaving = action.payload;

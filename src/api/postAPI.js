@@ -207,9 +207,10 @@ export const postSortPhieu = async (data, headers, dispatch) => {
   })
     .then((res) => {
       const { statusCode, content } = res.data;
+      // console.log(content);
       if (statusCode === 200) {
         if (content.loaiPhieu === "px") {
-          dispatch(updateListPhieuXuatSaving(content.res));
+          dispatch(updateListPhieuXuatSaving(content));
         } else {
           dispatch(updateListPhieuNhapSaving(content.res));
         }

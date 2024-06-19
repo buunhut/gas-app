@@ -33,7 +33,7 @@ const ThongKe = () => {
     await getKho(headers, dispatch);
   };
 
-  console.log("báo cáo", listKho);
+  // console.log("báo cáo", listKho);
 
   const tongNoTien = listKhachHangNo.reduce(
     (total, item) => total + item.tongTienNo,
