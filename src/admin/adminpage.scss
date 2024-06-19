@@ -98,6 +98,13 @@ button.btnf {
     transform: translateX(-30px);
     transition: all .5s;
 
+    p.tra {
+        color: #c0c0c0;
+        font-size: 14px;
+        font-weight: 500;
+        margin-left: 18px;
+    }
+
 
     span.deleteTraTien {
         cursor: pointer;

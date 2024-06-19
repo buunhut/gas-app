@@ -286,6 +286,9 @@ const PhieuContent = ({ item, toShow, sort }) => {
                   <i className="fa-regular fa-trash-can"></i>
                 </span>
                 <span>{moment(tien.ngay).format("DD/MM/YYYY")}</span>
+                <p className="tra">
+                  Trả tiền <i className="fa-regular fa-hand-point-right"></i>
+                </p>
               </div>
 
               <div>
@@ -335,6 +338,9 @@ const PhieuContent = ({ item, toShow, sort }) => {
                 </span>
 
                 <span>{moment(item.ngay).format("DD/MM/YYYY")}</span>
+                <p className="tra">
+                  Trả vỏ <i className="fa-regular fa-hand-point-right"></i>
+                </p>
               </div>
               <div>
                 <p style={{ paddingRight: "3px" }}>
