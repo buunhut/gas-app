@@ -337,7 +337,7 @@ const PhieuContent = ({ item, toShow, sort }) => {
                   <i className="fa-regular fa-trash-can"></i>
                 </span>
 
-                <span>{moment(item.ngay).format("DD/MM/YYYY")}</span>
+                <span>{moment(vo.ngay).format("DD/MM/YYYY")}</span>
                 <p className="tra">
                   Trả vỏ <i className="fa-regular fa-hand-point-right"></i>
                 </p>
