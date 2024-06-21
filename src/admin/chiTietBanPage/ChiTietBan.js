@@ -12,6 +12,7 @@ const ChiTietBan = () => {
     (state) => state.dataSlice
   );
   // console.log(listKhachTraNo);
+  // console.log(listPhieuXuatSaving);
 
   const uniqueKhachHang = Array.from(
     new Map(
@@ -24,11 +25,7 @@ const ChiTietBan = () => {
 
   // console.log(uniqueKhachHang);
 
-  // const date = new Date().toISOString().split("T")[0];
   const date = moment().utcOffset(7).format("YYYY-MM-DD");
-
-  // const dateTime = moment().utcOffset(7).format("YYYY-MM-DD HH:mm:ss");
-  // console.log(dateTime);
 
   const [sort, setSort] = useState({
     fromDay: date,
@@ -59,15 +56,22 @@ const ChiTietBan = () => {
     await postSortPhieu(sort, headers, dispatch);
   };
 
+  // console.log(listPhieuXuatSaving);
+
+  const listPhieuTraVoKhachLoai = listPhieuXuatSaving?.filter(
+    (item) => !item.cungLoai
+  );
+
+  // console.log(listPhieuTraVoKhachLoai);
+
   useEffect(() => {
     handleSortPhieu(sort, headers, dispatch);
   }, [sort, headers, dispatch]);
 
-  // useEffect(() => {
-  //   handleSortPhieu(sort, headers, dispatch);
-  // }, [sort]);
+  // useEffect(() => {}, [listPhieuXuatSaving]);
 
   const [phieuNoOnly, setPhieuNoOnly] = useState(false);
+  const [phieuTraKhacLoaiOnly, setPhieuTraKhacLoaiOnly] = useState(false);
 
   return (
     <div className="chiTietBan">
@@ -114,19 +118,30 @@ const ChiTietBan = () => {
               <ChiTietInfo
                 listPhieuXuatSaving={listPhieuXuatSaving}
                 setPhieuNoOnly={setPhieuNoOnly}
+                listPhieuTraVoKhachLoai={listPhieuTraVoKhachLoai}
+                phieuTraKhacLoaiOnly={phieuTraKhacLoaiOnly}
+                setPhieuTraKhacLoaiOnly={setPhieuTraKhacLoaiOnly}
               />
-              {listPhieuXuatSaving?.map((phieu, index) => {
-                if (phieuNoOnly === true) {
-                  const { tongNoTien, tongNoVo } = phieu;
-                  if (tongNoTien !== 0 || tongNoVo !== 0) {
+              {phieuTraKhacLoaiOnly
+                ? listPhieuTraVoKhachLoai.map((phieu, index) => {
                     return (
                       <ChiTietItem phieu={phieu} key={index} sort={sort} />
                     );
-                  }
-                } else {
-                  return <ChiTietItem phieu={phieu} key={index} sort={sort} />;
-                }
-              })}
+                  })
+                : listPhieuXuatSaving?.map((phieu, index) => {
+                    if (phieuNoOnly === true) {
+                      const { tongNoTien, tongNoVo } = phieu;
+                      if (tongNoTien !== 0 || tongNoVo !== 0) {
+                        return (
+                          <ChiTietItem phieu={phieu} key={index} sort={sort} />
+                        );
+                      }
+                    } else {
+                      return (
+                        <ChiTietItem phieu={phieu} key={index} sort={sort} />
+                      );
+                    }
+                  })}
             </>
           )}
           {listKhachTraNo.length > 0 && (

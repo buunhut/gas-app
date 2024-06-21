@@ -315,7 +315,10 @@ const PhieuContent = ({ item, toShow, sort }) => {
       })}
       {/* list trả vỏ */}
       {listTraVo?.map((vo, index) => {
-        const { soLuong, loaiVo } = vo;
+        const { soLuong, loaiVo, loaiVoId } = vo;
+        const cungLoai = listChiTiet.find(
+          (chiTiet) => chiTiet.loaiVoId === loaiVoId
+        );
         return (
           <div key={index}>
             <div
@@ -338,9 +341,17 @@ const PhieuContent = ({ item, toShow, sort }) => {
                 </span>
 
                 <span>{moment(vo.ngay).format("DD/MM/YYYY")}</span>
-                <p className="tra">
-                  Trả vỏ <i className="fa-regular fa-hand-point-right"></i>
-                </p>
+
+                {cungLoai ? (
+                  <p className="tra">
+                    Trả vỏ <i className="fa-regular fa-hand-point-right"></i>{" "}
+                  </p>
+                ) : (
+                  <p className="tra" style={{ color: "red" }}>
+                    Trả vỏ khác loại{" "}
+                    <i className="fa-regular fa-hand-point-right"></i>{" "}
+                  </p>
+                )}
               </div>
               <div>
                 <p style={{ paddingRight: "3px" }}>

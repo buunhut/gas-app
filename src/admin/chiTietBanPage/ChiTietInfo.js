@@ -1,6 +1,12 @@
 import React from "react";
 
-const ChiTietInfo = ({ listPhieuXuatSaving, setPhieuNoOnly }) => {
+const ChiTietInfo = ({
+  listPhieuXuatSaving,
+  setPhieuNoOnly,
+  listPhieuTraVoKhachLoai,
+  phieuTraKhacLoaiOnly,
+  setPhieuTraKhacLoaiOnly,
+}) => {
   const soLuongPhieu = listPhieuXuatSaving.length;
   const tongTienCacPhieu = listPhieuXuatSaving.reduce(
     (total, item) => total + item.tongTien,
@@ -26,7 +32,24 @@ const ChiTietInfo = ({ listPhieuXuatSaving, setPhieuNoOnly }) => {
 
   return (
     <div className="p10 totalDetail">
-      <h3>{soLuongPhieu.toLocaleString()} Phiếu</h3>
+      <div className="flex aic jcsbw">
+        <h3 onClick={() => setPhieuTraKhacLoaiOnly(false)}>
+          {soLuongPhieu.toLocaleString()} Phiếu
+        </h3>
+        {listPhieuTraVoKhachLoai.length > 0 && (
+          <p
+            style={{
+              color: phieuTraKhacLoaiOnly ? "#009900" : "silver",
+              marginBottom: "10px",
+              cursor: "pointer",
+            }}
+            onClick={() => setPhieuTraKhacLoaiOnly(!phieuTraKhacLoaiOnly)}
+          >
+            Có {listPhieuTraVoKhachLoai.length.toLocaleString()} phiếu trả vỏ
+            khác loại
+          </p>
+        )}
+      </div>
       <div className="flex aic jcsbw g10">
         <div className="chiTietInfo">
           <span>

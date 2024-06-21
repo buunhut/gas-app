@@ -24,7 +24,10 @@ const ChiTietItem = ({ phieu, sort }) => {
     tongNoTien,
     tongNoVo,
     // ghiChu,
+    cungLoai,
   } = phieu;
+
+  // console.log(cungLoai);
 
   const handleDelelePhieu = async (phieu) => {
     speak(`Bạn có chắc muốn xoá phiếu của ${tenDoiTac}`);
