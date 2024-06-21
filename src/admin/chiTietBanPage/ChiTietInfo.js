@@ -34,7 +34,7 @@ const ChiTietInfo = ({
     <div className="p10 totalDetail">
       <div className="flex aic jcsbw">
         <h3 onClick={() => setPhieuTraKhacLoaiOnly(false)}>
-          {soLuongPhieu.toLocaleString()} Phiếu
+          Tổng {soLuongPhieu.toLocaleString()} phiếu
         </h3>
         {listPhieuTraVoKhachLoai.length > 0 && (
           <p
