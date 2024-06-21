@@ -25,10 +25,10 @@ const ChiTietBan = () => {
 
   // console.log(uniqueKhachHang);
 
-  const date = moment().utcOffset(7).format("YYYY-MM-DD");
+  // const date = moment().utcOffset(7).format("YYYY-MM-DD");
 
   const [sort, setSort] = useState({
-    fromDay: date,
+    fromDay: null,
     toDay: null,
     doiTacId: null,
     sanPhamId: null,
@@ -82,7 +82,7 @@ const ChiTietBan = () => {
             <input
               type="date"
               id="fromDay"
-              value={sort.fromDay}
+              // value={sort.fromDay}
               onChange={handleChangeInput}
             />
             <input type="date" id="toDay" onChange={handleChangeInput} />
